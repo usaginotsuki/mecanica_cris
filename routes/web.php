@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\latexPrint;
 use App\Http\Livewire\Base;
 use App\Http\Livewire\EngranadeHelicoidalIngles;
 use App\Http\Livewire\EngranadeHelicoidalMetrico;
@@ -32,7 +33,7 @@ Route::get('/helicoidales-ingles', EngranadeHelicoidalIngles::class)->name('heli
 Route::get('/helicoidales-metricos', EngranadeHelicoidalMetrico::class)->name('helicoidal-metrico');
 Route::get('/conicos-ingles', EngranajeConicoIngles::class)->name('conico-ingles');
 Route::get('/conicos-metrico', EngranajeConicoMetrico::class)->name('conico-metrico');
-Route::get('/pdf-eri', [EngranajeRectoIngles::class, 'pdfRI'])->name('pdf-eri');
+Route::get('pdf-eri', [latexPrint::class,'download'])->name('pdf-eri');
 
 Route::middleware([
     'auth:sanctum',

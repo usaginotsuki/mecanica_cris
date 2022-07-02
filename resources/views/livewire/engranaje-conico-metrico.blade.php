@@ -1,8 +1,10 @@
+@inject('provider', 'App\Http\Controllers\latexPrint')
+
 <div class="p-2 md:p-6 h-auto bg-white rounded-lg text-neutral-600">
     <div class="flex justify-center text-gray-800 uppercase font-bold">
         Engranajes Conicos (Metrico)
     </div>
-    <input class="ml-16 px-3 py-3 rounded-full bg-blue-600 hover:bg-blue-800 cursor-pointer text-white" type="button" value="Imprimir" onclick="javascript:window.print()" />
+    <input class="ml-16 px-3 py-3 rounded-full bg-blue-600 hover:bg-blue-800 cursor-pointer text-white" type="button" value="Resultados" onclick= '' />
     <hr>
     <div>
         <div class="flex mt-10">

@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Livewire;
-
 use Livewire\Component;
+use Ismaelw\LaraTeX\LaraTeX;
 
 class EngranajeConicoMetrico extends Component
 {
@@ -13,5 +13,17 @@ class EngranajeConicoMetrico extends Component
     public function render()
     {
         return view('livewire.engranaje-conico-metrico')->extends('layouts.app')->section('content');
+    }
+    public function download(){
+        return (new LaraTeX('latex.tex'))->with([
+            'Name' => 'John Doe',
+            'Dob' => '01/01/1990',
+            'SpecialCharacters' => '$ (a < b) $',
+            'languages' => [
+                'English',
+                'Spanish',
+                'Italian'
+            ]
+        ])->download('test.pdf');
     }
 }
