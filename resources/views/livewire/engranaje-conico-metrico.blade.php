@@ -6,7 +6,7 @@
     </div>
     <input class="ml-16 px-3 py-3 rounded-full bg-blue-600 hover:bg-blue-800 cursor-pointer text-white" type="button" value="Resultados" onclick= '' />
     <hr>
-    <form action="{{url('pdf-conicos-SI')}}" method="POST" target="_blank">
+    <form action="{{url('pdf-conicos-ingles')}}" method="POST" target="_blank">
         @csrf
         <input type="submit">
     <div>
@@ -22,27 +22,27 @@
                 {{-- Potencia en P --}}
                     <div class="flex flex-col items-center">
                         <label for="">Potencia (KW) <b>(P)</b></label>
-                        <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="P">
+                        <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="P" wire:model="P">
                     </div>
                 {{-- RELACION DE TRANSMISION--}}
                     <div class="flex flex-col items-center">
                         <label for="">Relacion Transmision <b> (mG)</b></label>
-                        <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="mG">
+                        <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="mG" wire:model="mG">
                     </div>
                 {{-- REVOLUCION DEL PIÑON RPMp --}}
                     <div class="flex flex-col items-center">
                         <label for="">Revolucion del Piñon <b> (RPMp)</b></label>
-                        <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="RPMp">
+                        <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="RPMp" wire:model="RPMp">
                     </div>
                 {{-- NUMERO DE DIENTES DEL PIÑON Np--}}
                     <div class="flex flex-col items-center">
                         <label for=""># Dientes del Piñon <b> (Np)</b></label>
-                        <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="Np">
+                        <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="Np" wire:model="Np">
                     </div>
                 {{-- NUMERO DE DIENTES DE LA CORONA NG --}}
                     <div class="flex flex-col items-center">
                         <label for=""># Dientes de la Corona <b> (Ng)</b></label>
-                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="Ng">
+                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="Ng" wire:model="Ng">
                             @php
                                 if ($Np) {
                                     $Ng = $mG * $Np;     
@@ -59,18 +59,18 @@
                 {{-- DUREZA BRINELL DEL PIÑON HBP--}}
                     <div class="flex flex-col items-center">
                         <label for="">Dureza Brinell del Piñon <b> (HBP)</b></label>
-                        <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="HBP">
+                        <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="HBP" wire:model="HBP">
                     </div>
                 {{-- DUREZA BRINELL DE LA CORONA HBG--}}
                     <div class="flex flex-col items-center">
                         <label for="">Dureza Brinell de la Corona <b> (HBG)</b></label>
-                        <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="HBG">
+                        <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="HBG" wire:model="HBG">
                     </div>
                 {{-- NUMERO DE CICLOS DE CARGA NL--}}
                     <div class="flex flex-col items-center">
                         <label for=""># Ciclos de Carga <b>(NL)</b></label>
                         <div class="flex">
-                            <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="NL">
+                            <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="NL" wire:model="NL">
                             <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/conicos-metricos/Figura 15-9.JPG') }}">
                                 <i class="text-3xl  fa-solid fa-image"></i>
                             </a>
@@ -79,7 +79,7 @@
                 {{-- NUMERO DE CICLOS DE CARGA NG--}}
                     <div class="flex flex-col items-center">
                         <label for=""># Ciclos de Carga <b>(NLG)</b></label>
-                            <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="NLG">
+                            <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="NLG" wire:model="NLG">
                                 @php
                                     if ($NL && $mG) {
                                         $NLG = $NL / $mG;     
@@ -97,17 +97,17 @@
                 {{-- FACTOR DE SEGURIDAD PIÑON Ns--}}
                     <div class="flex flex-col items-center">
                         <label for="">Factor de Seguridad Piñon<b> (Ns)</b></label>
-                        <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="Ns">
+                        <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="Ns" wire:model="Ns">
                     </div>
                 {{-- FACTOR DE SEGURIDAD CORONA Ns--}}
                     <div class="flex flex-col items-center">
                         <label for="">Factor de Seguridad Corona<b> (Nsg)</b></label>
-                        <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="Nsg">
+                        <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="Nsg" wire:model="Nsg">
                     </div>
                 {{-- TEMPERATURA--}}
                     <div class="flex flex-col items-center">
                         <label for="">Temperatura <b> (O) </b></label>
-                        <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="O">
+                        <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="O" wire:model="O">
                     </div>
                 {{-- DE GRADOS A RADIANES TEMPERATURA--}}
                     {{-- @php
@@ -116,7 +116,7 @@
                 {{-- ANGULO NORMAL--}}
                     <div class="flex flex-col items-center">
                         <label for="">Angulo Normal <b></b></label>
-                        <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="anguloN">
+                        <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="anguloN" wire:model="anguloN">
                     </div>
                     @php
                         if ($anguloN) {
@@ -126,7 +126,7 @@
                 {{-- CONFIABILIDAD--}}
                     <div class="flex flex-col items-center">
                         <label for="">Confiabilidad <b> (R)</b></label>
-                        <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="R">
+                        <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="R" wire:model="R">
                     </div>
                 
                 <div class="flex flex-col col-span-4 py-1 rounded-full bg-neutral-700 text-center text-white">CALCULO DE LA GEOMETRIA DEL PIÑON</div>
@@ -138,7 +138,7 @@
                     <div class="flex flex-col items-center">
                         <label for="">Modulo <b>(m)</b></label>
                         <div class="flex">
-                            <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="m">
+                            <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="m" wire:model="m">
                             <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/conicos-metricos/Tabla_1.JPG') }}">
                                 <i class="text-3xl  fa-solid fa-image"></i>
                             </a>
@@ -148,7 +148,7 @@
                     <div class="flex flex-col items-center">
                         <label for="">Paso <b>(Paso)</b></label>
                         <div class="flex">
-                            <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="paso">
+                            <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="paso" wire:model="paso">
                                 @php
                                     if ($m) {
                                         $paso = 1/$m;     
@@ -166,7 +166,7 @@
                 {{-- DIAMETRO PRIMITIVO Dp--}}
                     <div class="flex flex-col items-center">
                         <label for="">Diametro Primitivo <b>(Dp)</b></label>
-                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="Dp">
+                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="Dp" wire:model="Dp">
                             @php
                                 if ($Np && $m) {
                                     $Dp = $Np*$m;     
@@ -183,7 +183,7 @@
                 {{-- DIAMETRO EXTERIOR --}}
                     <div class="flex flex-col items-center">
                         <label for="">Diametro Exterior <b>(De)</b></label>
-                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="De">
+                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="De" wire:model="De">
                             @php
                                 if ($m && $anguloN && $Dp) {
                                     $De = (2 * $m * cos($anguloN)) + $Dp;     
@@ -200,7 +200,7 @@
                 {{-- VELOCIDAD --}}
                     <div class="flex flex-col items-center">
                         <label for="">Velocidad <b>(Vet)</b></label>
-                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="Vet">
+                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="Vet" wire:model="Vet">
                             @php
                                 if ($Dp && $Np) {
                                     $Vet = 0.00005236 * $Dp *  $RPMp;     
@@ -225,7 +225,7 @@
                     <div class="flex flex-col items-center">
                         <label for="">Exactitud de Transmision <b>(Qv)</b></label>
                         <div class="flex">
-                            <select class="mb-2 block w-36 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="Qv">
+                            <select class="mb-2 block w-36 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="Qv" wire:model="Qv">
                                     <option class="text-gray-400" value="0">Seleccionar</option>
                                     <option value="5">Qv = 5</option>
                                     <option value="6">Qv = 6</option>
@@ -252,7 +252,7 @@
                 {{-- FACTOR DINAMICO Kv --}}
                     <div class="flex flex-col items-center">
                         <label for="">Factor Dinamico<b>(kv)</b></label>
-                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="Kv">
+                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="Kv" wire:model="Kv">
                             {{number_format($Kv,2)}}
                         </span>
                     </div>
@@ -266,7 +266,7 @@
                 {{-- VELOCIDAD EN LA LINEA DE PASO Vetmax --}}
                     <div class="flex flex-col items-center">
                         <label for="">Velocidad linea de paso<b>(Vetmax)</b></label>
-                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="Vetmax">
+                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="Vetmax" wire:model="Vetmax">
                             @if (is_float($Vetmax))
                                 {{number_format($Vetmax,2)}}
                             @else
@@ -277,7 +277,7 @@
                 {{-- CARGA DE TRABAJO --}}
                     <div class="flex flex-col items-center">
                         <label for="">Carga de Trabajo <b>(Wt)</b></label>
-                        <span disabled="true" class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="WT">
+                        <span disabled="true" class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="WT" wire:model="WT">
                             @php
                                 if ($P && $Vet) {
                                     $WT = (1000 * $P)/$Vet;     
@@ -295,7 +295,7 @@
                     <div class="flex flex-col items-center">
                         <label for="">Factor de Sobrecarga <b>(Ka)</b></label>
                         <div class="flex">
-                            <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="Ka">
+                            <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="Ka" wire:model="Ka">
                             <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/conicos-metricos/Tabla_15-2.JPG') }}">
                                 <i class="text-3xl  fa-solid fa-image"></i>
                             </a>
@@ -304,7 +304,7 @@
                 {{-- ANGULO DE PASO DEL PIÑON --}}
                     <div class="flex flex-col items-center">
                         <label for="">Angulo de paso <b>(Piñon)</b></label>
-                        <span disabled="true" class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="anguloY">
+                        <span disabled="true" class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="anguloY" wire:model="anguloY">
                             @php
                                 $angulo = 0;
                                 if ($P && $Vet) {
@@ -323,7 +323,7 @@
                 {{-- DISTANCIA EXTERIOR AL CONO --}}
                     <div class="flex flex-col items-center">
                         <label for="">Distancia exterior Cono <b>(Ao)</b></label>
-                        <span disabled="true" class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="Ao">
+                        <span disabled="true" class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="Ao" wire:model="Ao">
                             @php
                                 if ($Dp && $anguloY) {
                                     $Ao = $Dp/(2*sin($anguloY));
@@ -339,7 +339,7 @@
                 {{-- ANCHO DE CARA --}}
                     {{-- <div class="flex flex-col items-center">
                         <label for="">Ancho de Cara <b>(b)</b></label>
-                        <span disabled="true" class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="b">
+                        <span disabled="true" class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="b" wire:model="b">
                             @php
                                 $valor1=0;
                                 $valor2=0;
@@ -378,11 +378,11 @@
                     <div class="flex flex-col items-center">
                         <label for="">Ancho de Cara</label>
                         <div class="flex space-x-3">
-                            <input class="mb-2 block border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="opcionanchocara" name="opcionanchocara" type="radio" value="{{$valor1}}"/>
+                            <input class="mb-2 block border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm"  wire:model="opcionanchocara" name="opcionanchocara" type="radio" value="{{$valor1}}"/>
                             <span>{{$valor1}}</span>
                         </div>
                         <div class="flex space-x-3">
-                            <input class="mb-2 block border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="opcionanchocara" name="opcionanchocara" type="radio" value="{{$valor2}}"/>
+                            <input class="mb-2 block border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm"  wire:model="opcionanchocara" name="opcionanchocara" type="radio" value="{{$valor2}}"/>
                             <span>{{$valor2}}</span>
                         </div>
                         @php
@@ -396,7 +396,7 @@
                     <div class="flex flex-col items-center">
                         <label for="">Factor de Tamaño<b>(Yx)</b></label>
                         <div class="flex">
-                            <span disabled="true" class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="Yx">
+                            <span disabled="true" class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="Yx" wire:model="Yx">
                                 @php
     
                                     if ($m) {
@@ -421,7 +421,7 @@
                 {{-- FACTOR DE CURVATURA --}}
                     <div class="flex flex-col items-center">
                         <label for="">Factor de Curvatura<b>(Yb)</b></label>
-                        <span disabled="true" class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="Yb">
+                        <span disabled="true" class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="Yb" wire:model="Yb">
                                 {{$Yb}}
                         </span>
                     </div>
@@ -429,7 +429,7 @@
                     <div class="flex flex-col">
                         <label for="">KMB <b>(Kmb)</b></label>
                         <div class="flex space-x-3">
-                            <input class="mb-2 block border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="Kmb" name="Kmb" type="radio" value="1"/>
+                            <input class="mb-2 block border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm"  wire:model="Kmb" name="Kmb" type="radio" value="1"/>
                             <label for="">Ambos miembros</label>
                         </div>
                         <div class="flex space-x-3">
@@ -437,14 +437,14 @@
                             <label for="">Un miembro</label>
                         </div>
                         <div class="flex space-x-3">
-                            <input class="mb-2 block border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="Kmb" name="Kmb" type="radio" value="1.25"/>
+                            <input class="mb-2 block border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm"  wire:model="Kmb" name="Kmb" type="radio" value="1.25"/>
                             <label for="">Ningun miembro</label>
                         </div>
                     </div> 
                 {{-- FACTOR DE DISTANCIA DE CARGA--}}
                     <div class="flex flex-col items-center">
                         <label for="">Factor Distancia Carga <b>(KHB)</b></label>
-                        <span disabled="true" class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="KHB">                            
+                        <span disabled="true" class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="KHB" wire:model="KHB">                            
                             @php
                                 if ($b && $Kmb) {
                                     $KHB = $Kmb + (5.6 * 0.0000001 * pow($b, 2));
@@ -461,7 +461,7 @@
                     <div class="flex flex-col items-center">
                         <label for="">Factor de Geometria <b>(Yj)</b></label>
                         <div class="flex">
-                            <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="Yj">
+                            <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="Yj" wire:model="Yj">
                             <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/conicos-metricos/Figura 15-7.JPG') }}">
                                 <i class="text-3xl  fa-solid fa-image"></i>
                             </a>
@@ -470,7 +470,7 @@
                 {{-- ESFUERZO DE FLEXION DEL PIÑON--}}
                     <div class="flex flex-col items-center">
                         <label for="">Esfuerzo de flexion (Piñon) <b>(Ofp)</b></label>
-                        <span disabled="true" class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="Ofp">                            
+                        <span disabled="true" class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="Ofp" wire:model="Ofp">                            
                             @php
                                 if ($WT && $b && $Ka && $Kv && $m && $Yx && $KHB && $Yb && $Yj) {
                                     $Ofp = ($WT/$b) * (($Ka * $Kv) / $m) * (($Yx * $KHB)/($Yb*$Yj));
@@ -488,11 +488,11 @@
                     <div class="flex flex-col items-center">
                         <label for="">Acero completamente endurecido</label>
                         <div class="flex space-x-3">
-                            <input class="mb-2 block border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="opciongrado" name="opciongrado" type="radio" value="1"/>
+                            <input class="mb-2 block border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm"  wire:model="opciongrado" name="opciongrado" type="radio" value="1"/>
                             <label for="">Grado 1</label>
                         </div>
                         <div class="flex space-x-3">
-                            <input class="mb-2 block border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="opciongrado" name="opciongrado" type="radio" value="2"/>
+                            <input class="mb-2 block border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm"  wire:model="opciongrado" name="opciongrado" type="radio" value="2"/>
                             <label for="">Grado 2</label>
                         </div>
                     </div>
@@ -506,14 +506,14 @@
                 {{-- NUMERO DE ESFUERZO POR FLEXION PERMISIBLE --}}
                     <div class="flex flex-col items-center">
                         <label for="">Flexion Permisible<b>(Flim)</b></label>
-                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="Flim">
+                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="Flim" wire:model="Flim">
                             {{number_format($Flim,2)}}
                         </span>
                     </div>
                 {{-- FACTOR DE CICLOS DEL ESFUERZO --}}
                     <div class="flex flex-col items-center">
                         <label for="">YNT<b>(YNT)</b></label>
-                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="YNT">
+                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="YNT" wire:model="YNT">
                             @php
                                 if ($NL) {
                                     if ((100 <= $NL) && ($NL < 1000)) {
@@ -537,7 +537,7 @@
                 {{-- FACTOR DE TEMPERATURA --}}
                     <div class="flex flex-col items-center">
                         <label for="">Factor de Temperatura <b>(Ko)</b></label>
-                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="Ko">                            
+                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="Ko" wire:model="Ko">                            
                             @php
                                 if ($O) {
                                     if ((0 <= $O) && ($O <= 120)) {
@@ -557,7 +557,7 @@
                 {{-- FACTOR DE CONFIABILIDAD --}}
                     <div class="flex flex-col items-center">
                         <label for="">Factor Confiabilidad<b>(Yz)</b></label>
-                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="Yz">
+                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="Yz" wire:model="Yz">
                             @php
                                 if ($R) {
                                     if ($R >= 0.9) {
@@ -581,7 +581,7 @@
                 {{-- ESFUERZO DE FLEXION PERMISIBLE --}}
                     <div class="flex flex-col items-center">
                         <label for="">Ofpp<b>(Ofpp)</b></label>
-                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="Ofpp">
+                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="Ofpp" wire:model="Ofpp">
                             @php
                                 if ($Flim && $YNT && $Ns && $Ko && $Yz) {
                                     $Ofpp = ($Flim * $YNT) / ($Ns * $Ko * $Yz); 
@@ -597,7 +597,7 @@
                 {{-- FACTOR DE SEGURIDAD SF --}}
                     <div class="flex flex-col items-center">
                         <label for="">Factor de Seguridad<b>(Sf)</b></label>
-                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="Sf">
+                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="Sf" wire:model="Sf">
                             @php
                                 if ($Ns && $Ofpp && $Ofp) {
                                     $Sf = $Ns * ($Ofpp/$Ofp);
@@ -619,7 +619,7 @@
                 {{-- FACTOR DE CICLOS DE ESFUERZO DE RESISTENCIA A LA PICADURA --}}
                 <div class="flex flex-col items-center">
                     <label for="">Factor de Ciclos de Esfuerzo <b>(ZNTP)</b></label>
-                    <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="ZNTP">
+                    <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="ZNTP" wire:model="ZNTP">
                         @php
                             if ($NL) {
                                 if ((1000 <= $NL) && ($NL < 10000)) {
@@ -643,11 +643,11 @@
                     <div class="flex flex-col items-center">
                         <label for="">Acero completamente endurecido</label>
                         <div class="flex space-x-3">
-                            <input class="mb-2 block border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="opciongrado20" name="opciongrado20" type="radio" value="1"/>
+                            <input class="mb-2 block border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm"  wire:model="opciongrado20" name="opciongrado20" type="radio" value="1"/>
                             <label for="">Grado 1</label>
                         </div>
                         <div class="flex space-x-3">
-                            <input class="mb-2 block border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="opciongrado20" name="opciongrado20" type="radio" value="2"/>
+                            <input class="mb-2 block border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm"  wire:model="opciongrado20" name="opciongrado20" type="radio" value="2"/>
                             <label for="">Grado 2</label>
                         </div>
                     </div>
@@ -661,7 +661,7 @@
             {{-- ESFUERZO DE COTACTO PERMISIBLE --}}
                 <div class="flex flex-col items-center">
                     <label for="">Flexion Permisible<b>(FHlim)</b></label>
-                    <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="FHlim">
+                    <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="FHlim" wire:model="FHlim">
                         {{number_format($FHlim,2)}}
                     </span>
                 </div>
@@ -670,7 +670,7 @@
                     <div class="flex flex-col items-center">
                         <label for="">Relacion Poisson Piñon <b>(V1)</b></label>
                         <div class="flex">
-                            <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="V1">
+                            <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="V1" wire:model="V1">
                             <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/conicos-metricos/Tabla_A-5.JPG') }}">
                                 <i class="text-3xl  fa-solid fa-image"></i>
                             </a>
@@ -680,7 +680,7 @@
                     <div class="flex flex-col items-center">
                         <label for="">Relacion Poisson Corona <b>(V2)</b></label>
                         <div class="flex">
-                            <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="V2">
+                            <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="V2" wire:model="V2">
                             <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/conicos-metricos/Tabla_A-5.JPG') }}">
                                 <i class="text-3xl  fa-solid fa-image"></i>
                             </a>
@@ -690,7 +690,7 @@
                     <div class="flex flex-col items-center">
                         <label for="">Modulo Elasticidad Piñon MPa <b>(E1)</b></label>
                         <div class="flex">
-                            <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="E1">
+                            <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="E1" wire:model="E1">
                             <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/conicos-metricos/Tabla_A-5.JPG') }}">
                                 <i class="text-3xl  fa-solid fa-image"></i>
                             </a>
@@ -700,7 +700,7 @@
                     <div class="flex flex-col items-center">
                         <label for="">Modulo Elasticidad Corona MPa <b>(E2)</b></label>
                         <div class="flex">
-                            <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="E2">
+                            <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="E2" wire:model="E2">
                             <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/conicos-metricos/Tabla_A-5.JPG') }}">
                                 <i class="text-3xl  fa-solid fa-image"></i>
                             </a>
@@ -709,7 +709,7 @@
                 {{-- COEFICIENTE ELASTICO  DE RESISTENCIA  A PICADURA --}}
                     <div class="flex flex-col items-center">
                         <label for="">CRITERIO ELASTICO A PICADURA<b>(ZE)</b></label>
-                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="ZE">
+                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="ZE" wire:model="ZE">
                             @php
                                 if ($V1 && $E1 && $V2 && $E2) {
                                     $ZE = sqrt(1/(pi() * (((1-(pow($V1,2)))/$E1) + ((1-(pow($V2,2)))/$E2))));
@@ -725,7 +725,7 @@
                 {{-- FACTOR DE TAMAÑO POR RESISTENCIA A PICADURA --}}
                     <div class="flex flex-col items-center">
                         <label for="">Factor Tamaño Resistencia<b>(Zx)</b></label>
-                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="Zx">
+                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="Zx" wire:model="Zx">
                             @php
                                 if ($b) {
                                     if ($b < 12.7) {
@@ -748,11 +748,11 @@
                     <div class="flex flex-col">
                         <label for="">Factor por Coronamiento<b>(Zxc)</b></label>
                         <div class="flex space-x-3">
-                            <input class="mb-2 block border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="Zxc" name="Zxc" type="radio" value="1.5"/>
+                            <input class="mb-2 block border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm"  wire:model="Zxc" name="Zxc" type="radio" value="1.5"/>
                             <label for="">Dientes Coronados</label>
                         </div>
                         <div class="flex space-x-3">
-                            <input class="mb-2 block border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="Zxc" name="Zxc" type="radio" value="2"/>
+                            <input class="mb-2 block border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm"  wire:model="Zxc" name="Zxc" type="radio" value="2"/>
                             <label for="">Dientes no coronados</label>
                         </div>
                     </div>
@@ -775,7 +775,7 @@
                 {{-- ESFUERZO DE CONTACTO FH --}}
                     <div class="flex flex-col items-center">
                         <label for="">Esfuerzo de Contacto<b>(FH)</b></label>
-                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="FH">
+                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="FH" wire:model="FH">
                             @php
                                 if ($b && $WT && $ZE && $Dp && ($ZI > 0) && $Ka && $Kv && $KHB && $KHB && $Zx && $Zxc) {
                                     $FH = $ZE * sqrt( (($WT)/($b * $Dp * $ZI)) * $Ka * $Kv * $KHB * $Zx * $Zxc );
@@ -791,7 +791,7 @@
                 {{-- FACTOR DE CICLOS DE ESFUERZO DE RESISTENCIA A LA PICADURA --}}
                     <div class="flex flex-col items-center">
                         <label for="">Factor de Ciclos de Esfuerzo<b>(ZNT)</b></label>
-                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="ZNT">
+                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="ZNT" wire:model="ZNT">
                             @php
                                 if ($NL) {
                                     if ((1000 <= $NL) && ($NL < 10000)) {
@@ -812,7 +812,7 @@
                 {{-- FACTOR DE RELACION DE DUREZA --}}
                     <div class="flex flex-col items-center">
                         <label for="">Factor Relacion Dureza<b>(ZW)</b></label>
-                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="ZW">
+                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="ZW" wire:model="ZW">
                             @php
                                 $b1 = 0;
                                 if ($Np && $Ng && $HBP && $HBG) {
@@ -830,7 +830,7 @@
                 {{-- Factor de Confiabilidad --}}
                     <div class="flex flex-col items-center">
                         <label for="">Factor de Confiabilidad<b>(SH)</b></label>
-                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="SH">
+                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="SH" wire:model="SH">
                             @php
                                 if ($Ns) {
                                     $SH = sqrt($Ns);
@@ -846,7 +846,7 @@
                 {{-- Factor de Confiabilidad --}}
                     <div class="flex flex-col items-center">
                         <label for="">Factor de Confiabilidad<b>(Zz)</b></label>
-                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="Zz">
+                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="Zz" wire:model="Zz">
                             @php
                                 if ($Yz) {
                                     $Zz = sqrt($Yz);
@@ -862,7 +862,7 @@
                 {{-- NUMERO DE ESFUERZO DE CONTACTO --}}
                     <div class="flex flex-col items-center">
                         <label for=""># Esfuerzo de Contacto<b>(FHP)</b></label>
-                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="FHP">
+                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="FHP" wire:model="FHP">
                             @php
                                 if ($FHlim && $ZNTP && $ZW && $SH && $Ko && $Zz) {
                                     $FHP = ($FHlim  * $ZNTP * $ZW) / ($SH * $Ko * $Zz);
@@ -878,7 +878,7 @@
                 {{-- FACTOR DE SEGURIDAD SF --}}
                     <div class="flex flex-col items-center">
                         <label for="">Factor de Seguridad<b>(Sff)</b></label>
-                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="Sff">
+                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="Sff" wire:model="Sff">
                             @php
                                 if ($Ns && $FHP && $FH) {
                                     $Sff = sqrt($Ns) * ($FHP/$FH);
@@ -904,11 +904,11 @@
                     <div class="flex flex-col items-center">
                         <label for="">Acero completamente endurecido</label>
                         <div class="flex space-x-3">
-                            <input class="mb-2 block border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="opciongrado21" name="opciongrado21" type="radio" value="1"/>
+                            <input class="mb-2 block border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm"  wire:model="opciongrado21" name="opciongrado21" type="radio" value="1"/>
                             <label for="">Grado 1</label>
                         </div>
                         <div class="flex space-x-3">
-                            <input class="mb-2 block border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="opciongrado21" name="opciongrado21" type="radio" value="2"/>
+                            <input class="mb-2 block border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm"  wire:model="opciongrado21" name="opciongrado21" type="radio" value="2"/>
                             <label for="">Grado 2</label>
                         </div>
                     </div>
@@ -922,7 +922,7 @@
                 {{-- ESFUERZO DE COTACTO PERMISIBLE --}}
                     <div class="flex flex-col items-center">
                         <label for="">Flexion Permisible<b>(FHlimg)</b></label>
-                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="FHlimg">
+                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="FHlimg" wire:model="FHlimg">
                             {{number_format($FHlimg,2)}}
                         </span>
                     </div>
@@ -930,7 +930,7 @@
                     <div class="flex flex-col items-center">
                         <label for="">Factor de Geometria Corona<b>(Yjg)</b></label>
                         <div class="flex">
-                            <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="Yjg">
+                            <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="Yjg" wire:model="Yjg">
                             <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/conicos-metricos/Figura 15-7.JPG') }}">
                                 <i class="text-3xl  fa-solid fa-image"></i>
                             </a>
@@ -939,7 +939,7 @@
                 {{-- ESFUERZO DE FLEXION DEL Corona--}}
                     <div class="flex flex-col items-center">
                         <label for="">Esfuerzo de flexion (Corona) <b>(Ofg)</b></label>
-                        <span disabled="true" class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="Ofg">                            
+                        <span disabled="true" class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="Ofg" wire:model="Ofg">                            
                             @php
                                 if ($WT && $b && $Ka && $Kv && $m && $Yx && $KHB && $Yb && $Yjg) {
                                     $Ofg = ($WT/$b) * (($Ka * $Kv) / $m) * (($Yx * $KHB)/($Yb*$Yjg));
@@ -956,11 +956,11 @@
                     <div class="flex flex-col items-center">
                         <label for="">Acero completamente endurecido</label>
                         <div class="flex space-x-3">
-                            <input class="mb-2 block border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="opciongradocorona" name="opciongradocorona" type="radio" value="1"/>
+                            <input class="mb-2 block border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm"  wire:model="opciongradocorona" name="opciongradocorona" type="radio" value="1"/>
                             <label for="">Grado 1</label>
                         </div>
                         <div class="flex space-x-3">
-                            <input class="mb-2 block border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="opciongradocorona" name="opciongradocorona" type="radio" value="2"/>
+                            <input class="mb-2 block border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm"  wire:model="opciongradocorona" name="opciongradocorona" type="radio" value="2"/>
                             <label for="">Grado 2</label>
                         </div>
                     </div>
@@ -974,14 +974,14 @@
                 {{-- NUMERO DE ESFUERZO POR FLEXION PERMISIBLE --}}
                     <div class="flex flex-col items-center">
                         <label for="">Flexion Permisible Corona<b>(Flimg)</b></label>
-                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="Flimg">
+                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="Flimg" wire:model="Flimg">
                             {{number_format($Flimg,2)}}
                         </span>
                     </div>
                 {{-- FACTOR DE CICLOS DEL ESFUERZO --}}
                     <div class="flex flex-col items-center">
                         <label for="">YNT Corona<b>(YNTG)</b></label>
-                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="YNTG">
+                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="YNTG" wire:model="YNTG">
                             @php
                                 if ($NLG) {
                                     if ((100 <= $NLG) && ($NLG < 1000)) {
@@ -1012,7 +1012,7 @@
                 {{-- ESFUERZO DE FLEXION PERMISIBLE --}}
                     <div class="flex flex-col items-center">
                         <label for="">Ofgg Corona<b>(Ofgg)</b></label>
-                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="Ofgg">
+                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="Ofgg" wire:model="Ofgg">
                             @php
                                 if ($Flimg && $YNTG && $Nsg && $Ko && $Yz) {
                                     $Ofgg = ($Flimg * $YNTG) / ($Nsg * $Ko * (sqrt($Yz))); 
@@ -1034,7 +1034,7 @@
                 {{-- FACTOR DE SEGURIDAD SFG --}}
                     <div class="flex flex-col items-center">
                         <label for="">Factor de Seguridad<b>(Sfg)</b></label>
-                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="Sfg">
+                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="Sfg" wire:model="Sfg">
                             @php
                                 if ($Nsg && $Ofgg && $Ofg) {
                                     $Sfg = $Nsg * ($Ofgg/$Ofg);
@@ -1056,7 +1056,7 @@
                 {{-- FACTOR DE CICLOS DE ESFUERZO DE RESISTENCIA A LA PICADURA --}}
                     <div class="flex flex-col items-center">
                         <label for="">Factor de Ciclos de Esfuerzo<b>(ZNTG)</b></label>
-                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="ZNTG">
+                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="ZNTG" wire:model="ZNTG">
                             @php
                                 if ($NLG) {
                                     if ((1000 <= $NLG) && ($NLG < 10000)) {
@@ -1078,7 +1078,7 @@
                 {{-- NUMERO DE ESFUERZO DE CONTACTO DE LA CORONA--}}
                     <div class="flex flex-col items-center">
                         <label for=""># Esfuerzo de Contacto<b>(FHG)</b></label>
-                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="FHG">
+                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="FHG" wire:model="FHG">
                             @php
                                 if ($FHlimg && $ZNTG && $ZW && $Nsg && $Ko && $Zz) {
                                     $FHG = ($FHlimg  * $ZNTG * $ZW) / ((sqrt($Nsg)) * $Ko * $Zz);
@@ -1102,7 +1102,7 @@
                 {{-- FACTOR DE SEGURIDAD Sgg --}}
                     <div class="flex flex-col items-center">
                         <label for="">Factor de Seguridad<b>(Sgg)</b></label>
-                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="Sgg">
+                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="Sgg" wire:model="Sgg">
                             @php
                                 if ($Nsg && $Ofgg && $Ofg) {
                                     $Sgg = sqrt($Nsg) * ($Ofgg/$Ofg);
@@ -1119,11 +1119,11 @@
                     <div class="flex flex-col">
                         <label for="">Condicion del Engranaje <b></b></label>
                         <div class="flex space-x-3">
-                            <input class="mb-2 block border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="opcioncoronado" name="opcioncoronado" type="radio" value="1"/>
+                            <input class="mb-2 block border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm"  wire:model="opcioncoronado" name="opcioncoronado" type="radio" value="1"/>
                             <label for="">Engranaje Coronado</label>
                         </div>
                         <div class="flex space-x-3">
-                            <input class="mb-2 block border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="opcioncoronado" name="opcioncoronado" type="radio" value="2"/>
+                            <input class="mb-2 block border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm"  wire:model="opcioncoronado" name="opcioncoronado" type="radio" value="2"/>
                             <label for="">Engranaje no Coronado</label>
                         </div>
                     </div>
