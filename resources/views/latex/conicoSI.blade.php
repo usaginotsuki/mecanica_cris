@@ -1,4 +1,4 @@
-\documentclass[a4paper,9pt,landscape]{article}
+\documentclass[a4paper,9pt,vertical]{article}
 \usepackage{adjustbox}
 \usepackage[english]{babel}
 \usepackage[scaled=.92]{helvet}
@@ -6,8 +6,7 @@
 \usepackage[svgnames,table]{xcolor}
 \usepackage[a4paper,inner=1.5cm,outer=1.5cm,top=1cm,bottom=1cm,bindingoffset=0cm]{geometry}
 \usepackage{blindtext}
-\geometry{textwidth=\paperwidth, textheight=\paperheight, noheadfoot, nomarginpar}
-
+\usepackage{multicol}
 \renewcommand{\familydefault}{\sfdefault}
 
 \pagestyle{fancy}
@@ -16,12 +15,26 @@
 \fancyfoot{}
 \fancyfoot[LE,RO]{\thepage}
 
-\fancyfoot[C]{\fontsize{8pt}{8pt}\selectfont The above document is auto-generated.}
 \renewcommand{\footrulewidth}{0.2pt}
 
 \begin{document}
 
-    \section*{\centering{LaraTeX Demo Document}}
+    \section*{\centering{Engranajes Cónicos - Sistema Internacional}}
+  
+    \begin{multicols}{2}
+
+    $[Datos: Pot(P)= {{$P}}]
+
+
+
+  
+    \end{multicols}
+
+
+
+
+   
     
-    
+  
+
 \end{document}

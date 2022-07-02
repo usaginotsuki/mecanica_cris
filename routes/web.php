@@ -33,7 +33,11 @@ Route::get('/helicoidales-ingles', EngranadeHelicoidalIngles::class)->name('heli
 Route::get('/helicoidales-metricos', EngranadeHelicoidalMetrico::class)->name('helicoidal-metrico');
 Route::get('/conicos-ingles', EngranajeConicoIngles::class)->name('conico-ingles');
 Route::get('/conicos-metrico', EngranajeConicoMetrico::class)->name('conico-metrico');
-Route::get('pdf-eri', [latexPrint::class,'download'])->name('pdf-eri');
+Route::post('/pdf-conicos-ingles',  [latexPrint::class, 'engranajeConicoingles']);
+Route::post('/notes', function () {
+    return 'Creating a note';
+})->name('home1');;
+Route::get('pdf-eri', [latexPrint::class, 'download'])->name('pdf-eri');
 
 Route::middleware([
     'auth:sanctum',

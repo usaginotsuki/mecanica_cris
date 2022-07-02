@@ -6,6 +6,11 @@
     </div>
     <input class="ml-16 px-3 py-3 rounded-full bg-blue-600 hover:bg-blue-800 cursor-pointer text-white" type="button" value="Resultados" onclick= '' />
     <hr>
+    <form action="{{url('pdf-conicos-SI')}}" method="POST" target="_blank">
+        @csrf
+        <input type="submit">
+    <div>
+        
     <div>
         <div class="flex mt-10">
             <main class="w-full md:w-3/4 grid grid-cols-2 md:grid-cols-4 text-sm gap-y-3">
@@ -1472,6 +1477,6 @@
         </div>
 
     </div>
-    
+    </form>
 </div>
 

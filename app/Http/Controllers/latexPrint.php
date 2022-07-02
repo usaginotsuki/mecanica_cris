@@ -13,9 +13,11 @@ class latexPrint extends Controller
 {
 
 
-    public function download()
+    public function engranajeConicoSI()
     {
-        $pdf = (new LaraTeX('latex.tex'))->with([
+        var_dump($_POST);
+
+        /*    $pdf = (new LaraTeX('latex.tex'))->with([
             'Name' => 'John Doe',
             'Dob' => '01/01/1990',
             'SpecialCharacters' => '$ (a < b) $',
@@ -45,6 +47,36 @@ class latexPrint extends Controller
             'Content-Type' => 'application/pdf',
         ];
         $file= $tmpfname.".pdf";
+        return response()->download($file, 'proceso.pdf', $headers);*/
+    }
+
+    public function engranajeConicoingles()
+    {
+
+        $pdf = (new LaraTeX('latex.conicoIg'))->with([
+            'P' => $_POST['P'],
+        ])->render();
+
+        $fileName = Str::random(10);
+        $basetmpfname = tempnam(storage_path('app/public'), $fileName);
+        $tmpfname = preg_replace('/\\.[^.\\s]{3,4}$/', '', $basetmpfname);
+        rename($basetmpfname, $tmpfname);
+        $tmpDir = storage_path('app/public');
+        chmod($tmpfname, 0755);
+
+        File::put($tmpfname, $pdf);
+
+        $program    = 'pdflatex';
+        
+        $string = "" . $program . " -output-directory " . $tmpDir . " " . $tmpfname;
+        shell_exec($string);
+        sleep(3);
+        $headers = [
+            'Content-Type' => 'application/pdf',
+        ];
+        
+        $file = $tmpfname . ".pdf";
         return response()->download($file, 'proceso.pdf', $headers);
+       
     }
 }
