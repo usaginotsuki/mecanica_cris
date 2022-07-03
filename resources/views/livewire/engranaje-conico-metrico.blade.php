@@ -6,7 +6,7 @@
     </div>
     <input class="ml-16 px-3 py-3 rounded-full bg-blue-600 hover:bg-blue-800 cursor-pointer text-white" type="button" value="Resultados" onclick= '' />
     <hr>
-    <form action="{{url('pdf-conicos-ingles')}}" method="POST" target="_blank">
+    <form action="{{url('pdf-conicos-metrico')}}" method="POST" target="_blank">
         @csrf
         <input type="submit">
     <div>

@@ -31,7 +31,7 @@
     \end{center}
    \begin{multicols}{2}
     Datos:\\
-    $Pot(P)= [HP]$\\
+    $Pot(P)=  [HP]$\\
     $n =    [rpm]$\\
     $N_p =      [dientes pinon]$\\
     $N_g =      [dientes engrane]$\\

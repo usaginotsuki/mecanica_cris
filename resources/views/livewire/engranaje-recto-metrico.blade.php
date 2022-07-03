@@ -91,8 +91,10 @@
                             //Diametro de paso
                             if ($modulo && $np) {
                                 $dp = $modulo*$np;
+                                
                             }
                         @endphp
+                        <input type='hidden' name='dp' value='<?php echo "$dp";?>'/> 
                         <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="dp" wire:model="dp">
                             @if (is_float($dp))
                                 {{number_format($dp,3)}}
@@ -1033,5 +1035,44 @@
         </div>
 
     </div>
+    <input type='hidden' name='v' value='<?php echo "$v";?>'/> 
+    <input type='hidden' name='wt' value='<?php echo "$wt";?>'/> 
+    <input type='hidden' name='kv' value='<?php echo "$kv";?>'/> 
+    <input type='hidden' name='st' value='<?php echo "$st";?>'/> 
+    <input type='hidden' name='y' value='<?php echo "$y";?>'/> 
+    <input type='hidden' name='o' value='<?php echo "$o";?>'/> 
+    <input type='hidden' name='fn' value='<?php echo "$fn";?>'/> 
+    <input type='hidden' name='op' value='<?php echo "$op";?>'/> 
+    <input type='hidden' name='ko' value='<?php echo "$ko";?>'/> 
+    <input type='hidden' name='kv1' value='<?php echo "$kv1";?>'/> 
+    <input type='hidden' name='ks' value='<?php echo "$ks";?>'/> 
+    <input type='hidden' name='km' value='<?php echo "$km";?>'/> 
+    <input type='hidden' name='cmc' value='<?php echo "$cmc";?>'/> 
+    <input type='hidden' name='cpf' value='<?php echo "$cpf";?>'/> 
+    <input type='hidden' name='cpm' value='<?php echo "$cpm";?>'/> 
+    <input type='hidden' name='cma' value='<?php echo "$cma";?>'/> 
+    <input type='hidden' name='ce' value='<?php echo "$ce";?>'/> 
+    <input type='hidden' name='kb' value='<?php echo "$kb";?>'/>
+    <input type='hidden' name='jp' value='<?php echo "$jp";?>'/>  
+    <input type='hidden' name='sfp' value='<?php echo "$sfp";?>'/> 
+    <input type='hidden' name='kr' value='<?php echo "$kr";?>'/> 
+    <input type='hidden' name='ynp' value='<?php echo "$ynp";?>'/> 
+    <input type='hidden' name='og' value='<?php echo "$og";?>'/> 
+    <input type='hidden' name='jg' value='<?php echo "$jg";?>'/> 
+    <input type='hidden' name='sfg' value='<?php echo "$sfg";?>'/>
+    <input type='hidden' name='kr' value='<?php echo "$kr";?>'/>  
+    <input type='hidden' name='yng' value='<?php echo "$yng";?>'/>
+    <input type='hidden' name='opcionflexion3' value='<?php echo "$opcionflexion3";?>'/>
+    <input type='hidden' name='ocp' value='<?php echo "$ocp";?>'/>
+    <input type='hidden' name='ze' value='<?php echo "$ze";?>'/>  
+    <input type='hidden' name='zi' value='<?php echo "$zi";?>'/>
+    <input type='hidden' name='shp' value='<?php echo "$shp";?>'/>
+    <input type='hidden' name='znp' value='<?php echo "$znp";?>'/> 
+    <input type='hidden' name='scp' value='<?php echo "$scp";?>'/>       
+    <input type='hidden' name='shg' value='<?php echo "$shg";?>'/> 
+    <input type='hidden' name='zng' value='<?php echo "$zng";?>'/>   
+    <input type='hidden' name='scg' value='<?php echo "$scg";?>'/>  
+    <input type='hidden' name='chg' value='<?php echo "$chg";?>'/>  
+
 </form>
 </div>
