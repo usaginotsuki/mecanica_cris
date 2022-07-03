@@ -34,7 +34,7 @@
                 {{-- Potencia a Transmitir KW --}}
                     <div class="flex flex-col items-center">
                         <label for="">Potencia a Transmitir <b>(KW)</b></label>
-                        <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="potencia" wire:model="potencia">
+                        <input type="number" step=".001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="potencia" wire:model="potencia">
                     </div>
                 {{-- GRADOS DEL Diente del piñon NP --}}
                     <div class="flex flex-col items-center">
@@ -51,34 +51,34 @@
                     <div class="flex flex-col items-center">
                         <x-jet-label for="text" value="" />
                         <label for=""># Dientes del Piñon<b>(Np)</b></label>
-                        <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="np" wire:model="np">
+                        <input type="number" step=".001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="np" wire:model="np">
                     </div> 
                 {{-- Dureza-Brinell Piñon HBp --}}
                     <div class="flex flex-col items-center">
                         <x-jet-label for="text" value="" />
                         <label for="">Dureza-Brinell Piñon<b>(HBp)</b></label>
-                        <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="hbp" wire:model="hbp">
+                        <input type="number" step=".001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="hbp" wire:model="hbp">
                     </div> 
                 {{-- Dureza-Brinell Engrane HBg --}}
                     <div class="flex flex-col items-center">
                         <x-jet-label for="text" value="" />
                         <label for="">Dureza-Brinell Engrane<b>(HBg)</b></label>
-                        <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="hbg" wire:model="hbg">
+                        <input type="number" step=".001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="hbg" wire:model="hbg">
                     </div> 
                 {{-- FACTOR DE SEGURIDAD NS --}} 
                     <div class="flex flex-col items-center">
                         <label for="">Factor de Seguridad <b>(Ns)</b></label>
-                        <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="ns" wire:model="ns">
+                        <input type="number" step=".001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="ns" wire:model="ns">
                     </div> 
                 {{-- MODULO --}} 
                     <div class="flex flex-col items-center">
                         <label for="">Modulo<b>(m)</b></label>
-                        <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="modulo" wire:model="modulo">
+                        <input type="number" step=".001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="modulo" wire:model="modulo">
                     </div> 
                 {{-- RELACION DE TRANSMISION i --}} 
                     <div class="flex flex-col items-center">
                         <label for="">Relacion de Transmision<b>(i)</b></label>
-                        <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="i" wire:model="i">
+                        <input type="number" step=".001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="i" wire:model="i">
                     </div> 
                     
                     
@@ -106,12 +106,12 @@
                 {{-- RAPIDEZ DEL PIÑON RPMP --}} 
                     <div class="flex flex-col items-center">
                         <label for="">Rapidez del Piñon<b>(RPMp)</b></label>
-                        <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="rpmp" wire:model="rpmp">
+                        <input type="number" step=".001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="rpmp" wire:model="rpmp">
                     </div> 
                 {{-- RAPIDEZ DEL ENGRANE RPMG --}}  
                     <div class="flex flex-col items-center">
                         <label for="">Rapidez del Engrane<b>(RPMg)</b></label>
-                        <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="rpmg" wire:model="rpmg">
+                        <input type="number" step=".001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="rpmg" wire:model="rpmg">
                     </div> 
                 {{-- VELOCIDAD--}} 
                     <div class="flex flex-col items-center">
@@ -253,7 +253,7 @@
                         <div class="flex flex-col items-center">
                             <label for="">Factor de Lewis <b>(Y)</b></label>
                             <div class="flex">
-                                <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="y" wire:model="y">
+                                <input type="number" step=".001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="y" wire:model="y">
                                 <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/espoch.png') }}">
                                     <i class="text-3xl  fa-solid fa-image"></i>
                                 </a>
@@ -263,23 +263,23 @@
                 {{-- INTERPOLACION PARA ELFACTOR DE LEWIS Y --}}
                     <div class="flex flex-col items-center">
                         <label for="">Interpolacion <b>(Y1)</b></label>
-                        <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="y1" wire:model="y1">
+                        <input type="number" step=".001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="y1" wire:model="y1">
                     </div>
                     <div class="flex flex-col items-center">
                         <label for="">Interpolacion <b>(Y2)</b></label>
-                        <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="y2" wire:model="y2">
+                        <input type="number" step=".001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="y2" wire:model="y2">
                     </div>
                     <div class="flex flex-col items-center">
                         <label for="">Interpolacion <b>(X1)</b></label>
-                        <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="x1" wire:model="x1">
+                        <input type="number" step=".001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="x1" wire:model="x1">
                     </div>
                     <div class="flex flex-col items-center">
                         <label for="">Interpolacion <b>(X2)</b></label>
-                        <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="x2" wire:model="x2">
+                        <input type="number" step=".001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="x2" wire:model="x2">
                     </div>
                     <div class="flex flex-col items-center">
                         <label for="">Interpolacion <b>(X)</b></label>
-                        <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="x" wire:model="x">
+                        <input type="number" step=".001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="x" wire:model="x">
                     </div>
                     @php
                         if ($y1 && $y2 && $x1 && $x2 && $x) {
@@ -349,7 +349,7 @@
                     <div class="flex flex-col items-center">
                         <label for="">Ancho de Cara (Normalizado)<b>(Fn)</b></label>
                         <div class="flex">
-                            <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="fn" wire:model="fn">
+                            <input type="number" step=".001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="fn" wire:model="fn">
                             <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/espoch.png') }}">
                                 <i class="text-3xl  fa-solid fa-image"></i>
                             </a>
@@ -359,7 +359,7 @@
                     <div class="flex flex-col items-center">
                         <label for="">Ko <b>(Ko)</b></label>
                         <div class="flex">
-                            <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="ko" wire:model="ko">
+                            <input type="number" step=".001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="ko" wire:model="ko">
                             <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/espoch.png') }}">
                                 <i class="text-3xl  fa-solid fa-image"></i>
                             </a>
@@ -453,17 +453,17 @@
                 {{-- CMA A --}}
                     <div class="flex flex-col items-center">
                         <label for="">Cma <b>(A)</b></label>
-                        <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="a1" wire:model="a1">
+                        <input type="number" step=".001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="a1" wire:model="a1">
                     </div>
                 {{-- CMA B --}}
                     <div class="flex flex-col items-center">
                         <label for="">Cma <b>(B)</b></label>
-                        <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="b1" wire:model="b1">
+                        <input type="number" step=".001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="b1" wire:model="b1">
                     </div>
                 {{-- CMA C --}}
                     <div class="flex flex-col items-center">
                         <label for="">Cma <b>(C)</b></label>
-                        <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="c1" wire:model="c1">
+                        <input type="number" step=".001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="c1" wire:model="c1">
                     </div>
                 {{-- CALCULO Y RESULTADO CMA --}}
                     <div class="flex flex-col items-center">
@@ -510,7 +510,7 @@
                 {{-- MB --}}
                     <div class="flex flex-col items-center">
                         <label for="">Mb <b>(Mb)</b></label>
-                        <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="mb" wire:model="mb">
+                        <input type="number" step=".001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="mb" wire:model="mb">
                     </div>
                 {{-- FACTOR DE ESPESOR DE ARO KB --}}
                     <div class="flex flex-col items-center">
@@ -530,7 +530,7 @@
                     <div class="flex flex-col items-center">
                         <label for="">Factor Geometrico Piñon <b>(Jp)</b></label>
                         <div class="flex">
-                            <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="jp" wire:model="jp">
+                            <input type="number" step=".001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="jp" wire:model="jp">
                             <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/espoch.png') }}">
                                 <i class="text-3xl  fa-solid fa-image"></i>
                             </a>
@@ -556,17 +556,17 @@
                 {{-- CALCULO DEL FACTOR DE SEGURIDAD YNP --}}
                     <div class="flex flex-col items-center">
                         <label for="">YNP <b>(Ynp)</b></label>
-                        <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="ynp" wire:model="ynp">
+                        <input type="number" step=".001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="ynp" wire:model="ynp">
                     </div>
                 {{-- KT --}}
                     <div class="flex flex-col items-center">
                         <label for="">KT <b>(Kt)</b></label>
-                        <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="kt" wire:model="kt">
+                        <input type="number" step=".001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="kt" wire:model="kt">
                     </div>
                 {{-- KR --}}
                     <div class="flex flex-col items-center">
                         <label for="">KR <b>(Kr)</b></label>
-                        <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="kr" wire:model="kr">
+                        <input type="number" step=".001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="kr" wire:model="kr">
                     </div>
                 {{-- SFP --}}
                     <div class="flex flex-col items-center">
@@ -591,7 +591,7 @@
                     <div class="flex flex-col items-center">
                         <label for="">Factor Geometrico Engrane <b>(Jg)</b></label>
                         <div class="flex">
-                            <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="jg" wire:model="jg">
+                            <input type="number" step=".001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="jg" wire:model="jg">
                             <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/espoch.png') }}">
                                 <i class="text-3xl  fa-solid fa-image"></i>
                             </a>
@@ -642,7 +642,7 @@
                 {{-- CALCULO DEL FACTOR DE SEGURIDAD YNP --}}
                     <div class="flex flex-col items-center">
                         <label for="">YNG <b>(Yng)</b></label>
-                        <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="yng" wire:model="yng">
+                        <input type="number" step=".001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="yng" wire:model="yng">
                     </div>
                 {{-- SFG --}}
                     <div class="flex flex-col items-center">
@@ -665,12 +665,12 @@
                 {{-- COEFICIENTE ELEASTICO Ze --}}
                     <div class="flex flex-col items-center">
                         <label for="">ZE <b>(Ze)</b></label>
-                        <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="ze" wire:model="ze">
+                        <input type="number" step=".001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="ze" wire:model="ze">
                     </div>
                 {{-- FACTOR DE CONDICION SUPERFICIAL ZR --}}
                     <div class="flex flex-col items-center">
                         <label for="">ZR <b>(Zr)</b></label>
-                        <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="zr" wire:model="zr">
+                        <input type="number" step=".001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="zr" wire:model="zr">
                     </div>
                 {{-- FACTOR GEOMETRICO ZI --}}
                     <div class="flex flex-col">
@@ -717,12 +717,12 @@
                 {{-- CALCULO DEL FACTOR DE SEGURIDAD DE DESGASTE DEL PINON --}}
                     <div class="flex flex-col items-center">
                         <label for="">ZNP PIÑON<b>(Znp)</b></label>
-                        <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="znp" wire:model="znp">
+                        <input type="number" step=".001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="znp" wire:model="znp">
                     </div>
                 {{-- FACTOR DE DUREZA PARA EL PIÑON SIEMPRE = 1 --}}
                     <div class="flex flex-col items-center">
                         <label for="">CHP <b>(CHp)</b></label>
-                        <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="chp" wire:model="chp">
+                        <input type="number" step=".001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="chp" wire:model="chp">
                     </div>
                 {{-- RESISTENCIA ADMISIBLE DE DESGASTE SUPERFICIAL --}}
                     <div class="flex flex-col items-center">
@@ -754,7 +754,7 @@
                 {{-- CALCULO DEL FACTOR DE SEGURIDAD DE DESGASTE DEL PINON --}}
                     <div class="flex flex-col items-center">
                         <label for="">ZNG Engrane<b>(Zng)</b></label>
-                        <input type="number" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="zng" wire:model="zng">
+                        <input type="number" step=".001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="zng" wire:model="zng">
                     </div>
                 {{-- FACTOR DE DUREZA PARA EL ENGRANE --}}
                     <div class="flex flex-col items-center">

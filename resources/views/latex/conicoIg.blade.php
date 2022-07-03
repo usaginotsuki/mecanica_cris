@@ -23,45 +23,44 @@
 
 \begin{document}
 \doublespacing
-    \section*{\centering{Engranajes Cónicos - Sistema Imperial}}
+    \section*{\centering{Engranajes Cónicos - Sistema Ingles}}
     
     \begin{center}
        
     \end{center}
    \begin{multicols}{2}
     Datos:\\
-    $Pot(P)=  [HP]$\\
-    $P_d= 	[dientes/in]$\\
-    $N_p=	$\\
-    $n_p=	[rpm] $\\
-    $n_g=	[rpm] $\\
-    $i= $\\
-    $Q_v= $\\
-    $Fact. Seg.= $ \\
-    $HB_p= $\\
-    $HB_g= $\\
+    $Pot(P)= {{$P}} [HP]$\\
+    $P_d= {{$Pd}}	[dientes/in]$\\
+    $N_p= {{$Np}}	$\\
+    $n_p= {{$RPMp}}	[rpm] $\\
+    $n_g= {{$RPMc}}	[rpm] $\\
+    $Q_v= {{$Qv}} $\\
+    $Fact. Seg.= {{$Ns}} $ \\
+    $HB_p= {{$HBp}} $\\
+    $HB_g= {{$HBg}} $\\
     
     CALCULO VARIABLES PRINCIPALES\\
     1.	Cálculo del diámetro de paso \\
 
     $dp = \frac{N_p}{Pd}$
-    $dp = $\\
+    $dp = {{$dp}} $\\
     
     2.	Cálculo de los ángulos de paso\\
 
     Angulo de paso del piñón\\
-    $\gamma = \tan^{-1} (\frac{N_p}{N_g}) = $
+    $\gamma = \tan^{-1} (\frac{N_p}{N_g}) = {{$anguloPP}} $
     Angulo de paso del engrane\\
-    $\Gamma = \tan^{-1}(\frac{N_p}{N_g}) = $
+    $\Gamma = \tan^{-1}(\frac{N_p}{N_g}) = {{$anguloPC}} $
 
 	3. Cálculo de la velocidad \\
 
     $v_t = \frac{\pi*dp*np}{12} $
-    $v_t = $
+    $v_t = {{$V}} $
 
 	4. Cálculo de carga tangencial \\
     $W^t = \frac{33000*hp}{v} $
-    $W^t = $ \\
+    $W^t = {{$Wt}} $ \\
 
     DISEÑO APLICANDO AGMA 2003-B97 (FLEXIÓN) \\
 
@@ -70,18 +69,18 @@
     2.	CÁLCULO DEL ESFUERZO DE FLEXIÓN PARA EL PIÑÓN\\
     
     $\sigma = \frac{W^t}{F}*P_d * K_o * K_v * K_s * \frac{K_s*K_m}{K_x*J}$
-    $\sigma = $\\
+    $\sigma = {{$Op}} $\\
 
     2.1.	Ancho de cara F
 
     $F = min(0.3A_0, \frac{10}{P_d}) donde: A_0 = \frac{dp}{sen\gamma}$
-    $F = $\\
+    $F = {{$Fn}} $\\
     
     
     2.2.	Factor de sobrecarga\\
     (Depende del nivel de impacto de trabajo)\\
     
-    $K_0 = $\\
+    $K_0 = {{$Ko}} $\\
     
     2.3.	Factor dinámico \\
     
@@ -93,17 +92,17 @@
 
     $v_tmax = [A+(Q_v-3)]^2$
     
-    $K_v = $\\
+    $K_v = {{$Kv}} $\\
     
     2.4   	Factor de tamaño \\
     
-    $K_s = $
+    $K_s = {{$Ks}} $
     
     2.5	Factor de distribución de carga\\
     
     $K_m=K_{mb}=0.0036F^2$
     
-    $K_m = $\\
+    $K_m = {{$Km}} $\\
     
     2.6	Factor de curvatura\\
     
@@ -112,86 +111,86 @@
     2.7	Factor geométrico \\
     (Depende del numero de dientes del piñón y engrane)\\
     
-    $J_p = $\\
+    $J_p = {{$Jp}} $\\
     
     3.  CÁLCULO DEL ESFUERZO PERMISIBLE A FLEXION PARA EL PIÑÓN\\
     
     $\sigma_{permP} = \frac{S_{atP}*K_L}{S_F*K_T*K_R}$\\
-    $\sigma_{permP} = $\\
+    $\sigma_{permP} = {{$OPP}} $\\
     
 
     3.1	 Esfuerzo de flexión permisible\\
     
     Depende de la dureza Brinell elegida, calculado para aceros endurecidos o ingresado por el usuario.\\
     
-    $SatP = $\\
+    $SatP = {{$opcionsat}} $\\
     
     
     3.2  Factor de seguridad [Sf]\\
     
-    $S_F = n_{smin} = $\\
+    $S_F = n_{smin} = {{$SF}} $\\
     
     3.3	 Factor de ciclos de esfuerzo de resistencia a la flexión\\
 
-    $ K_L = $\\
+    $ K_L = {{$KL}} $\\
     
     3.4	 Factor de Temperatura\\
 
-    $K_T =$\\
+    $K_T  = {{$KT}}$\\
     
     3.5	 Factor de confiabilidad\\
 
-    $K_R =$\\
+    $K_R = {{$KR}} $\\
     
     4.	CÁLCULO DEL ESFUERZO DE FLEXIÓN PARA LA CORONA.\\
     
     $\sigma_G = \frac{\sigma P}{J_P}*J_g$\\
-    $\sigma_G = $\\
+    $\sigma_G = {{$Oc}} $\\
     
     4.1.	Factor geométrico \\
     (Depende del número de dientes de la corona y piñón)\\
     
-    $J_g = $\\
+    $J_g = {{$Jc}} $\\
     
     5.	CÁLCULO DEL ESFUERZO PERMISIBLE A FLEXION PARA EL ENGRANE
     
-     $\sigma_{permP} = \frac{S_{atG}*K_L}{S_F*K_T*K_R} $\\
-      $\sigma_{permP} = $\\
+     $\sigma_{permG} = \frac{S_{atG}*K_L}{S_F*K_T*K_R} $\\
+      $\sigma_{permG} = {{$OPC}} $\\
     
     Depende de la dureza Brinell elegida, calculado para aceros endurecidos o ingresado por el usuario\\
     
-    $SatG = $
+    $SatG = {{$opcionsatc}} $
     
     CALCULO FACTORES DE SEGURIDAD PARA EL PIÑON Y EL ENGRANE\\
     
-    $S_F = n_s \frac{\sigma_{perm}}{\sigma}$
-    $S_{FP}$\\
-    $S_{FG}$\\
+    $S_F = n_s \frac{\sigma_{perm}}{\sigma}$\\
+    $S_{FP} = {{$SFP}} $\\
+    $S_{FG} = {{$SFC}} $\\
     DISEÑO APLICANDO AGMA 2003-B97 (DESGASTE SUPERFICIAL)\\
     
     1.	CALCULO DE ESFUERZO DE CONTACTO \\
    
    $\sigma_c = C_p(\frac{W^t}{F*d_p*I}*K_O*K_V*K_M*C_S*C_{XC})^{\frac{1}{2}}$\\
-   $\sigma_c = $ \\
-   $c_P = $
+   $\sigma_c = {{$EC}} $ \\
+   $c_P = {{$CP}} $\\
     (Coeficiente elástico, depende del material del piñón y corona, Tabla)\\
     
-    •	$I = $\\
+    •	$I = {{$I}} $\\
     (Factor geométrico, según figura)\\
      
     1.1.	 Factor de tamaño por resistencia a picadura\\
     
-   $C_s = $\\
+   $C_s = {{$Cs}} $\\
     
     1.2.	 Factor de coronamiento por picadura\\
     
-    $C_{xc} = $\\
+    $C_{xc} =  {{$Cxc}} $\\
         
     2.    	ESFUERZO PERMISIBLE A DESGASTE PARA EL PIÑON\\
     
     $S_{wcP}=\frac{S_{acP}*C_L*C_H}{S_H*K_T*C_R}$\\
     
-    $S_{wcP} =$\\
+    $S_{wcP} = {{$SWCP}} $\\
     
     2.1	 Factor de seguridad [SH]\\
     
@@ -200,14 +199,14 @@
     2.2	Esfuerzo permisible por contacto SAC\\
     Depende de la dureza Brinell elegida, calculado para aceros endurecidos o ingresado por el usuario\\
     
-    $SacP =$ \\
+    $SacP = {{$opcionsac}} $ \\
     
     2.3	Factor de ciclos de esfuerzo de resistencia a la picadura\\
    
-   $ C_L= $\\
+   $ C_L= {{$CL}} $\\
     
     2.4	Factor de reducción de dureza\\
-    $ C_H= $\\
+    $ C_H=  {{$CH}} $\\
     
     Donde :\\
     
@@ -216,26 +215,26 @@
     2.5	 Factor de confiabilidad\\
     Según la tabla de comparación con Kr\\
     
-    $C_R = $\\
+    $C_R = {{$CR}} $\\
     
     
     3.	ESFUERZO PERMISIBLE A DESGASTE PARA EL ENGRANE\\
     
     $S_{wcg}=\frac{S_{acg}*C_L*C_H}{S_H*K_T*C_R}$\\
     
-    $S_wcG =$\\
+    $S_{wcG} = {{$SWCG}} $\\
     
     3.1	Esfuerzo permisible por contacto SAC\\
     Depende de la dureza Brinell elegida, calculado para aceros endurecidos o ingresado por el usuario\\
     
-    $Sacg=$
+    $Sacg= {{$opcionsacc}}  $\\
     
-    4.	CALCULO DE FACTORES DE SEGURIDAD PARA EL PIÑON Y LA CORONA A DESGASTE
+    4.	CALCULO DE FACTORES DE SEGURIDAD PARA EL PIÑON Y LA CORONA A DESGASTE\\
     
-    $S_H=n_s (\frac{S_{WC}}{\sigma_C})^2$
+    $S_H=n_s (\frac{S_{WC}}{\sigma_C})^2$\\
     
-    $S_HP =$
-    $S_HG =$
+    $S_HP = {{$SHP}} $\\
+    $S_HG = {{$SHC}} $\\
     
 
 

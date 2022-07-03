@@ -30,177 +30,177 @@
     \end{center}
    \begin{multicols}{2}
     Datos:\\
-    $Pot(P)= [HP]$\\
-    $P_n = [dientes/in]$\\
-    $N_p = $\\
-    $\Phi = [grados]$\\
-    $\Psi = [grados]$\\
-    $np = [rpm]$\\
-    $ng = [rpm]$\\
-    $i = $\\
-    $F = $\\
+    $Pot(P)= {{$potencia}} [HP]$\\
+    $P_n =  {{$pn}} [dientes/in]$\\
+    $N_p =  {{$np}} $\\
+    $\Phi =  {{$angulon}} [grados]$\\
+    $\Psi =  {{$anguloy}} [grados]$\\
+    $np =  {{$rpmp}} [rpm]$\\
+    $ng =  {{$rpmc}} [rpm]$\\
+    $i =  {{$i}} $\\
+    $F =  {{$f}} $\\
     $Qv = $\\
-    $Fact. Seg = $\\
-    $HBp = $\\
-    $HBg = $\\
+    $Fact. Seg =  {{$ns}} $\\
+    $HBp =  {{$hbp}} $\\
+    $HBg =  {{$hbc}} $\\
     
         CALCULO VARIABLES PRINCIPALES\\
     1.	Cálculo del paso diametral transversal\\
     $Pt = Pn * cos\Psi$\\
-    $Pt = [dientes/in]$\\
+    $Pt =  {{$pt}} [dientes/in]$\\
     
     2.	Cálculo del diámetro de paso \\
     $dp=\frac{Np}{Pt}$\\
-    $dp=         [in]$\\
+    $dp=  {{$dp}}        [in]$\\
     
     3.	Cálculo de la velocidad \\
     $v=\frac{\pi*dp*np}{12}$\\
-    $v=             [fpm]$ \\
+    $v=     {{$v}}         [fpm]$ \\
     
     4.	Cálculo de carga tangencial \\
     $W^t=\frac{33000*hp}{v}$\\
-    $W^t=                    [lb]$\\
+    $W^t=  {{$wt}}                   [lb]$\\
     
     DISEÑO APLICANDO AGMA 2001-D04 (FLEXIÓN)\\
-    $	Se calcula con los valores de  dp, v, w^t, Qv, $\\
+	Se calcula con los valores de  dp, v, w^t, Qv, \\
     
     
     2.	CÁLCULO DEL ESFUERZO DE FLEXIÓN PARA EL PIÑÓN\\
     $\sigma_P=W^t*K_o*K_V*K_s*\frac{Pt}{F}*\frac{K_m*K_B}{J}$\\
-    $\sigma_P=                         [psi]$\\
+    $\sigma_P=   {{$op}}                       [psi]$\\
     
     	Cálculo de los factores $K_*$\\
     2.1	Factor de sobrecarga \\
     (Depende del nivel de impacto de trabajo)\\
-    $K_o = $\\
+    $K_o =  {{$ko}} $\\
     
     2.2	Factor dinámico \\
     $K_V=(A+\frac{\sqrt{v}}{A})^B$\\
     $A=50+56(1-B)$\\
     $B=0.25(12-Q_v)^(\frac{2}{3})$\\
-    $K_V=$\\
+    $K_V=  {{$kv1}} $\\
     
     2.3	Factor de tamaño \\
     Determinación del factor de Lewis\\
     (Depende el numero de dientes del piñón, tabla)\\
     
-    $Y =$\\
+    $Y =  {{$interpolar}}$\\
     
-    $K_s=$\\
+    $K_s=  {{$ks}} $\\
     $K_s=1.192(\frac{F\sqrt{Y}}{Pn})^{0.0535}$\\
     (consideración, sí $K_s<1$ se tomará $K_s=1$)\\
     
     2.4	Factor de distribución de carga\\
     $K_m=1+C_{mc} (C_{pf}*C_{pm}+C_{ma} C_e )$\\
-    $K_m=$\\
+    $K_m=  {{$km}} $\\
     
-    	$C_{mc}=$ \\
-	$C_{pf}=$ \\
-    $C_{pm}=$ \\
+    	$C_{mc}= {{$cmc}}$ \\
+	$C_{pf}=  {{$cpf}}$ \\
+    $C_{pm}=  {{$cpm}}$ \\
     (Depende de la separación de los cojinetes y línea de centro de cara de la rueda)\\
-    	$C_{ma}=$ \\
+    	$C_{ma}=  {{$cma}}$ \\
     (Depende de la condición de construcción) \\
     $C_{ma}=A+BF+CF^2$\\
-    $C_e=$ \\
+    $C_e=  {{$ce}}$ \\
     (Depende del ajuste al ensamble)\\
     2.5	Factor de espesor de aro.\\
     $m_B=\frac{t_R}{h_t}$ \\
-    $K_B=$\\
+    $K_B= {{$kb}}$\\
     
     2.6	Factor geométrico \\
     (Depende del numero de dientes del piñón y engrane, Tabla)\\
     $i=\frac{np}{ng}=\frac{Ng}{Np}=\frac{dg}{dp}$\\
-    $J_p =$\\
+    $J_p =  {{$jp}}$\\
     
     
 	3.  CÁLCULO DEL FACTOR DE SEGURIDAD PARA EL PIÑÓN\\
     $S_{Fp}=\frac{\frac{S_{tp}*Y_{Np}}{K_T*K_R}}{\sigma_p}$ \\
-    $S_{Fp} = $\\
+    $S_{Fp} =  {{$sfp}} $\\
     
     	$K_T=1$\\
-    	$K_r=$\\
+    	$K_r=  {{$kr}}$\\
     (Depende de la confiabilidad)\\
     
-    	$Y_{NP}=$\\
+    	$Y_{NP}=  {{$ynp}}$\\
     (Depende de los ciclos de trabajo)\\
     (Se debe comprobar que $S_{FP}>n_S$)\\
     
     4.  CÁLCULO DEL ESFUERZO DE FLEXIÓN PARA LA CORONA.\\
     $\sigma_G = \frac{\sigma_p}{J_p}*J_g$\\
     
-    $\sigma_G =                           [psi]$\\
+    $\sigma_G =    {{$oc}}                        [psi]$\\
     
     4.1	Factor geométrico \\
     (Depende del número de dientes de la corona y piñón)\\
-     $J_g = $\\
+     $J_g = {{$jc}}  $\\
     
     5.	CÁLCULO DEL FACTOR DE SEGURIDAD PARA LA CORONA\\
     $S_{FG}=\frac{\frac{S_tG*Y_{NG}}{K_T*K_R}}{\sigma_G} $\\
-    $S_{FG}=$\\
+    $S_{FG}=  {{$sfc}} $\\
     	$K_T=1$\\
-    	$K_r=$\\
+    	$K_r=  {{$kr}}$\\
     (Depende de la confiabilidad)\\
-    	$Y_{NG}=$\\
+    	$Y_{NG}=  {{$ync}}$\\
     (Depende de los ciclos de trabajo, Tabla)\\
-    	$S_{tG}=$\\
+    	$S_{tG}=  {{$opcionflexionpinona}}$\\
     (Depende del tipo de material usado)\\
     (Se debe comprobar que $S_{FG}>n_S$)\\
 
     DISEÑO APLICANDO AGMA 2001-D04 (DESGASTE SUPERFICIAL)\\
     1.  CALCULO DE ESFUERZO DE CONTACTO \\
     $\sigma_c = C_p(W^t*K_o*K_v*K_s*\frac{K_m}{d_p*F_{nor}}*\frac{C_f}{I})^{\frac{1}{2}}$\\
-    $\sigma_c=                                    [psi]$\\                                 
+    $\sigma_c=  {{$odp}}                                  [psi]$\\                                 
     
-    $Cp=$\\
+    $Cp= {{$cp3}} $\\
     (Coeficiente elástico, depende del material del piñón y corona)\\
     
     $C_f=1$\\
     (Factor de condición superficial, siempre que no especifique 1)\\
     
-    $I=$\\
+    $I= {{$i3}} $\\
     (Factor geométrico, tomando las siguientes condiciones)\\
     $i=\frac{Ng}{Np}=\frac{dg}{dp}$\\
     
-    $\Phi_t = tan^{-1}(\frac{\Phi}{\varphi}) =  [°] $\\
+    $\Phi_t = tan^{-1}(\frac{\Phi}{\varphi}) = {{$angulot}} [°] $\\
     $P_N = \frac{\pi}{P_n}cos\Phi_n = $\\
     
     $m_N = \frac{P_N}{0.95Z} donde z=v1+v2-v3$\\
     
-    $r_p = \frac{dp}{2} = [in]$\\
-    $r_g = \frac{dg}{2} = [in]$\\
-    $r_{bP} = r_p cos\Phi_t = [in]$\\
-    $r_{bG} = r_g cos\Phi_t = [in]$\\
-    $a = \frac{1}{P_n} = [in]$\\
+    $r_p = \frac{dp}{2} = {{$rp}} [in]$\\
+    $r_g = \frac{dg}{2} = {{$rg}} [in]$\\
+    $r_{bP} = r_p cos\Phi_t = {{$rbp}} [in]$\\
+    $r_{bG} = r_g cos\Phi_t = {{$rbg}} [in]$\\
+    $a = \frac{1}{P_n} = {{$a}}[in]$\\
     
     Si uno u otro de los 2 primeros términos entre paréntesis rectangulares (v1,v2,v3) es mayor que el tercer termino, se debe reemplazar por el tercero\\
     
         CÁLCULO DEL FACTOR DE SEGURIDAD AL DESGASTE DEL PIÑÓN\\
     $S_{HP}=\frac{\frac{S_{cp}*Z_{NP}*C_{HP}}{K_T*K_R}}{\sigma_C} $\\
-    $S_{HP} =  $\\
+    $S_{HP} = {{$shp3}}  $\\
     
     
     	$K_T  ; K_R$ se mantienen\\
-    	$Z_{NP}$ =\\
+    	$Z_{NP} = {{$zn3}}$ \\
     (Factor de vida al desgaste, depende de los ciclos de trabajo)\\
     
     	$ C_{HP} = 1 $ siempre para el piñón\\
     (Factor de dureza)\\
     
-    	$S_{cp}=$\\
+    	$S_{cp}= {{$sc3}} $\\
     (Resistencia admisible al desgaste superficial)\\
     
     	CÁLCULO DEL FACTOR DE SEGURIDAD AL DESGASTE DE LA CORONA\\
     $S_{HG}=\frac{\frac{S_{cG}*Z_{NG}*C_{HG}}{K_T*K_R}}{\sigma_C} $\\
-    $S_{HG} = $\\
+    $S_{HG} = {{$shc3}} $\\
     
     	$K_T ; K_R$ se mantienen\\
-    	$Z_{NG}=$\\
+    	$Z_{NG}= {{$znc3}}$\\
     (Factor de vida al desgaste, depende de los ciclos de trabajo)\\
     
-    	$S_{cG} = $\\
+    	$S_{cG} = {{$scc3}} $\\
     (Resistencia admisible al desgaste superficial)\\
     
-    	$C_{HG}= $\\
+    	$C_{HG}= {{$chc3}} $\\
     (Factor de dureza, depende de la dureza Brinell)\\
     $C_HG=1+A'(i-1)$\\
     
