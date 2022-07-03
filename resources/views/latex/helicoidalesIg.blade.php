@@ -62,7 +62,7 @@
     $W^t=  {{$wt}}                   [lb]$\\
     
     DISEÑO APLICANDO AGMA 2001-D04 (FLEXIÓN)\\
-	Se calcula con los valores de  dp, v, w^t, Qv, \\
+	Se calcula con los valores de  dp, v, $w^t$, Qv, \\
     
     
     2.	CÁLCULO DEL ESFUERZO DE FLEXIÓN PARA EL PIÑÓN\\

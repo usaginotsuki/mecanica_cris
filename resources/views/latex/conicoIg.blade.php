@@ -49,9 +49,9 @@
     2.	Cálculo de los ángulos de paso\\
 
     Angulo de paso del piñón\\
-    $\gamma = \tan^{-1} (\frac{N_p}{N_g}) = {{$anguloPP}} $
+    $\gamma = \tan^{-1} (\frac{N_p}{N_g}) = {{$anguloPP}} $\\
     Angulo de paso del engrane\\
-    $\Gamma = \tan^{-1}(\frac{N_p}{N_g}) = {{$anguloPC}} $
+    $\Gamma = \tan^{-1}(\frac{N_p}{N_g}) = {{$anguloPC}} $\\
 
 	3. Cálculo de la velocidad \\
 
@@ -68,12 +68,12 @@
     
     2.	CÁLCULO DEL ESFUERZO DE FLEXIÓN PARA EL PIÑÓN\\
     
-    $\sigma = \frac{W^t}{F}*P_d * K_o * K_v * K_s * \frac{K_s*K_m}{K_x*J}$
+    $\sigma = \frac{W^t}{F}*P_d * K_o * K_v * K_s * \frac{K_s*K_m}{K_x*J}$\\
     $\sigma = {{$Op}} $\\
 
-    2.1.	Ancho de cara F
+    2.1.	Ancho de cara F\\
 
-    $F = min(0.3A_0, \frac{10}{P_d}) donde: A_0 = \frac{dp}{sen\gamma}$
+    $F = min(0.3A_0, \frac{10}{P_d}) donde: A_0 = \frac{dp}{sen\gamma}$\\
     $F = {{$Fn}} $\\
     
     
@@ -84,23 +84,23 @@
     
     2.3.	Factor dinámico \\
     
-    $K_v = (\frac{A+\sqrt{v_t}}{A})^B$
-    $A = 50+56(1-B)$
-    $B = 0.25(12-Q_v)^{\frac{2}{3}}$
+    $K_v = (\frac{A+\sqrt{v_t}}{A})^B$\\
+    $A = 50+56(1-B)$\\
+    $B = 0.25(12-Q_v)^{\frac{2}{3}}$\\
 
     Se comprueba la velocidad\\
 
-    $v_tmax = [A+(Q_v-3)]^2$
+    $v_tmax = [A+(Q_v-3)]^2$\\
     
     $K_v = {{$Kv}} $\\
     
     2.4   	Factor de tamaño \\
     
-    $K_s = {{$Ks}} $
+    $K_s = {{$Ks}} $\\
     
     2.5	Factor de distribución de carga\\
     
-    $K_m=K_{mb}=0.0036F^2$
+    $K_m=K_{mb}=0.0036F^2$\\
     
     $K_m = {{$Km}} $\\
     
@@ -152,7 +152,7 @@
     
     $J_g = {{$Jc}} $\\
     
-    5.	CÁLCULO DEL ESFUERZO PERMISIBLE A FLEXION PARA EL ENGRANE
+    5.	CÁLCULO DEL ESFUERZO PERMISIBLE A FLEXION PARA EL ENGRANE\\
     
      $\sigma_{permG} = \frac{S_{atG}*K_L}{S_F*K_T*K_R} $\\
       $\sigma_{permG} = {{$OPC}} $\\

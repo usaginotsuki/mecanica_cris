@@ -22,22 +22,22 @@
                 {{-- Potencia en P --}}
                     <div class="flex flex-col items-center">
                         <label for="">Potencia (KW) <b>(P)</b></label>
-                        <input type="number" step=".001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="P" wire:model="P">
+                        <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="P" wire:model="P">
                     </div>
                 {{-- RELACION DE TRANSMISION--}}
                     <div class="flex flex-col items-center">
                         <label for="">Relacion Transmision <b> (mG)</b></label>
-                        <input type="number" step=".001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="mG" wire:model="mG">
+                        <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="mG" wire:model="mG">
                     </div>
                 {{-- REVOLUCION DEL PIÑON RPMp --}}
                     <div class="flex flex-col items-center">
                         <label for="">Revolucion del Piñon <b> (RPMp)</b></label>
-                        <input type="number" step=".001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="RPMp" wire:model="RPMp">
+                        <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="RPMp" wire:model="RPMp">
                     </div>
                 {{-- NUMERO DE DIENTES DEL PIÑON Np--}}
                     <div class="flex flex-col items-center">
                         <label for=""># Dientes del Piñon <b> (Np)</b></label>
-                        <input type="number" step=".001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="Np" wire:model="Np">
+                        <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="Np" wire:model="Np">
                     </div>
                 {{-- NUMERO DE DIENTES DE LA CORONA NG --}}
                     <div class="flex flex-col items-center">
@@ -59,18 +59,18 @@
                 {{-- DUREZA BRINELL DEL PIÑON HBP--}}
                     <div class="flex flex-col items-center">
                         <label for="">Dureza Brinell del Piñon <b> (HBP)</b></label>
-                        <input type="number" step=".001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="HBP" wire:model="HBP">
+                        <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="HBP" wire:model="HBP">
                     </div>
                 {{-- DUREZA BRINELL DE LA CORONA HBG--}}
                     <div class="flex flex-col items-center">
                         <label for="">Dureza Brinell de la Corona <b> (HBG)</b></label>
-                        <input type="number" step=".001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="HBG" wire:model="HBG">
+                        <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="HBG" wire:model="HBG">
                     </div>
                 {{-- NUMERO DE CICLOS DE CARGA NL--}}
                     <div class="flex flex-col items-center">
                         <label for=""># Ciclos de Carga <b>(NL)</b></label>
                         <div class="flex">
-                            <input type="number" step=".001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="NL" wire:model="NL">
+                            <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="NL" wire:model="NL">
                             <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/conicos-metricos/Figura 15-9.JPG') }}">
                                 <i class="text-3xl  fa-solid fa-image"></i>
                             </a>
@@ -97,17 +97,17 @@
                 {{-- FACTOR DE SEGURIDAD PIÑON Ns--}}
                     <div class="flex flex-col items-center">
                         <label for="">Factor de Seguridad Piñon<b> (Ns)</b></label>
-                        <input type="number" step=".001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="Ns" wire:model="Ns">
+                        <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="Ns" wire:model="Ns">
                     </div>
                 {{-- FACTOR DE SEGURIDAD CORONA Ns--}}
                     <div class="flex flex-col items-center">
                         <label for="">Factor de Seguridad Corona<b> (Nsg)</b></label>
-                        <input type="number" step=".001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="Nsg" wire:model="Nsg">
+                        <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="Nsg" wire:model="Nsg">
                     </div>
                 {{-- TEMPERATURA--}}
                     <div class="flex flex-col items-center">
                         <label for="">Temperatura <b> (O) </b></label>
-                        <input type="number" step=".001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="O" wire:model="O">
+                        <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="O" wire:model="O">
                     </div>
                 {{-- DE GRADOS A RADIANES TEMPERATURA--}}
                     {{-- @php
@@ -116,7 +116,7 @@
                 {{-- ANGULO NORMAL--}}
                     <div class="flex flex-col items-center">
                         <label for="">Angulo Normal <b></b></label>
-                        <input type="number" step=".001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="anguloN" wire:model="anguloN">
+                        <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="anguloN" wire:model="anguloN">
                     </div>
                     @php
                         if ($anguloN) {
@@ -126,7 +126,7 @@
                 {{-- CONFIABILIDAD--}}
                     <div class="flex flex-col items-center">
                         <label for="">Confiabilidad <b> (R)</b></label>
-                        <input type="number" step=".001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="R" wire:model="R">
+                        <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="R" wire:model="R">
                     </div>
                 
                 <div class="flex flex-col col-span-4 py-1 rounded-full bg-neutral-700 text-center text-white">CALCULO DE LA GEOMETRIA DEL PIÑON</div>
@@ -138,7 +138,7 @@
                     <div class="flex flex-col items-center">
                         <label for="">Modulo <b>(m)</b></label>
                         <div class="flex">
-                            <input type="number" step=".001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="m" wire:model="m">
+                            <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="m" wire:model="m">
                             <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/conicos-metricos/Tabla_1.JPG') }}">
                                 <i class="text-3xl  fa-solid fa-image"></i>
                             </a>
@@ -295,7 +295,7 @@
                     <div class="flex flex-col items-center">
                         <label for="">Factor de Sobrecarga <b>(Ka)</b></label>
                         <div class="flex">
-                            <input type="number" step=".001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="Ka" wire:model="Ka">
+                            <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="Ka" wire:model="Ka">
                             <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/conicos-metricos/Tabla_15-2.JPG') }}">
                                 <i class="text-3xl  fa-solid fa-image"></i>
                             </a>
@@ -461,7 +461,7 @@
                     <div class="flex flex-col items-center">
                         <label for="">Factor de Geometria <b>(Yj)</b></label>
                         <div class="flex">
-                            <input type="number" step=".001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="Yj" wire:model="Yj">
+                            <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="Yj" wire:model="Yj">
                             <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/conicos-metricos/Figura 15-7.JPG') }}">
                                 <i class="text-3xl  fa-solid fa-image"></i>
                             </a>
@@ -670,7 +670,7 @@
                     <div class="flex flex-col items-center">
                         <label for="">Relacion Poisson Piñon <b>(V1)</b></label>
                         <div class="flex">
-                            <input type="number" step=".001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="V1" wire:model="V1">
+                            <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="V1" wire:model="V1">
                             <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/conicos-metricos/Tabla_A-5.JPG') }}">
                                 <i class="text-3xl  fa-solid fa-image"></i>
                             </a>
@@ -680,7 +680,7 @@
                     <div class="flex flex-col items-center">
                         <label for="">Relacion Poisson Corona <b>(V2)</b></label>
                         <div class="flex">
-                            <input type="number" step=".001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="V2" wire:model="V2">
+                            <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="V2" wire:model="V2">
                             <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/conicos-metricos/Tabla_A-5.JPG') }}">
                                 <i class="text-3xl  fa-solid fa-image"></i>
                             </a>
@@ -690,7 +690,7 @@
                     <div class="flex flex-col items-center">
                         <label for="">Modulo Elasticidad Piñon MPa <b>(E1)</b></label>
                         <div class="flex">
-                            <input type="number" step=".001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="E1" wire:model="E1">
+                            <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="E1" wire:model="E1">
                             <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/conicos-metricos/Tabla_A-5.JPG') }}">
                                 <i class="text-3xl  fa-solid fa-image"></i>
                             </a>
@@ -700,7 +700,7 @@
                     <div class="flex flex-col items-center">
                         <label for="">Modulo Elasticidad Corona MPa <b>(E2)</b></label>
                         <div class="flex">
-                            <input type="number" step=".001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="E2" wire:model="E2">
+                            <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="E2" wire:model="E2">
                             <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/conicos-metricos/Tabla_A-5.JPG') }}">
                                 <i class="text-3xl  fa-solid fa-image"></i>
                             </a>
@@ -760,7 +760,7 @@
                     <div class="flex flex-col items-center">
                         <label for="">Factor Geometrico Picadura <b>(ZI)</b></label>
                         <div class="flex">
-                            <input type="number" step=".001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model.lazy="ZI">
+                            <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model.lazy="ZI">
                             <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/conicos-metricos/Figura 15-6.jpg') }}">
                                 <i class="text-3xl  fa-solid fa-image"></i>
                             </a>
@@ -930,7 +930,7 @@
                     <div class="flex flex-col items-center">
                         <label for="">Factor de Geometria Corona<b>(Yjg)</b></label>
                         <div class="flex">
-                            <input type="number" step=".001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="Yjg" wire:model="Yjg">
+                            <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="Yjg" wire:model="Yjg">
                             <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/conicos-metricos/Figura 15-7.JPG') }}">
                                 <i class="text-3xl  fa-solid fa-image"></i>
                             </a>
