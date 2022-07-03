@@ -30,7 +30,7 @@
     \end{center}
    \begin{multicols}{2}
     Datos:\\
-    $Pot(P)= [HP]$\\
+    $Pot(P)=  [HP]$\\
     $P_d= 	[dientes/in]$\\
     $N_p=	$\\
     $n_p=	[rpm] $\\

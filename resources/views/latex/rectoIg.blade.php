@@ -23,14 +23,14 @@
 
 \begin{document}
 \doublespacing
-    \section*{\centering{Engranajes Rectos - Sistema Internacional}}
+    \section*{\centering{Engranajes Rectos - Sistema Inglés}}
     
     \begin{center}
        
     \end{center}
    \begin{multicols}{2}
     Datos:\\
-    $Pot(P)= [HP]$\\
+    $Pot(P)= {{$potencia}} [HP]$\\
     $m = 	[diente/in]$\\
     $N_p=	$\\
     $n_p=	[rpm] $\\

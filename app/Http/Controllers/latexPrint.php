@@ -54,7 +54,7 @@ class latexPrint extends Controller
     {
        
 
-        $pdf = (new LaraTeX('latex.rectoSI'))->with([
+        $pdf = (new LaraTeX('latex.rectoIg'))->with([
             'P' => $this->check($_POST, 'P'),
             'Np' => $this->check($_POST, 'Np'),
             'Ng' => $this->check($_POST, 'Ng'),
@@ -63,6 +63,7 @@ class latexPrint extends Controller
             'HBg' => $this->check($_POST, 'HBg'),
             'Qv' => $this->check($_POST, 'Qv'),
             'dp' => $this->check($_POST, 'dp'),
+            'potencia' =>  $this->check($_POST, 'potencia'),
 
         ])->render();
 
@@ -93,7 +94,7 @@ class latexPrint extends Controller
     {
        
 
-        $pdf = (new LaraTeX('latex.rectoIg'))->with([
+        $pdf = (new LaraTeX('latex.rectoSI'))->with([
             'P' => $this->check($_POST, 'P'),
             'Np' => $this->check($_POST, 'Np'),
             'Ng' => $this->check($_POST, 'Ng'),
@@ -134,6 +135,84 @@ class latexPrint extends Controller
        
 
         $pdf = (new LaraTeX('latex.conicoSI'))->with([
+            'P' => $this->check($_POST, 'P'),
+            'Np' => $this->check($_POST, 'Np'),
+            'Ng' => $this->check($_POST, 'Ng'),
+            'Ns' => $this->check($_POST, 'Ns'),
+            'HBp' => $this->check($_POST, 'HBp'),
+            'HBg' => $this->check($_POST, 'HBg'),
+            'Qv' => $this->check($_POST, 'Qv'),
+            'dp' => $this->check($_POST, 'dp'),
+
+        ])->render();
+
+        $fileName = Str::random(10);
+        $basetmpfname = tempnam(storage_path('app/public'), $fileName);
+        $tmpfname = preg_replace('/\\.[^.\\s]{3,4}$/', '', $basetmpfname);
+        rename($basetmpfname, $tmpfname);
+        $tmpDir = storage_path('app/public');
+        chmod($tmpfname, 0755);
+
+        File::put($tmpfname, $pdf);
+
+        $program    = 'pdflatex';
+        
+        $string = "" . $program . " -output-directory " . $tmpDir . " " . $tmpfname;
+        shell_exec($string);
+        sleep(3);
+        $headers = [
+            'Content-Type' => 'application/pdf',
+        ];
+        
+        $file = $tmpfname . ".pdf";
+        return response()->download($file, 'proceso.pdf', $headers);
+       
+    }
+
+    public function engranajeHelicoidalSI()
+    {
+       
+
+        $pdf = (new LaraTeX('latex.helicoidalesSI'))->with([
+            'P' => $this->check($_POST, 'P'),
+            'Np' => $this->check($_POST, 'Np'),
+            'Ng' => $this->check($_POST, 'Ng'),
+            'Ns' => $this->check($_POST, 'Ns'),
+            'HBp' => $this->check($_POST, 'HBp'),
+            'HBg' => $this->check($_POST, 'HBg'),
+            'Qv' => $this->check($_POST, 'Qv'),
+            'dp' => $this->check($_POST, 'dp'),
+
+        ])->render();
+
+        $fileName = Str::random(10);
+        $basetmpfname = tempnam(storage_path('app/public'), $fileName);
+        $tmpfname = preg_replace('/\\.[^.\\s]{3,4}$/', '', $basetmpfname);
+        rename($basetmpfname, $tmpfname);
+        $tmpDir = storage_path('app/public');
+        chmod($tmpfname, 0755);
+
+        File::put($tmpfname, $pdf);
+
+        $program    = 'pdflatex';
+        
+        $string = "" . $program . " -output-directory " . $tmpDir . " " . $tmpfname;
+        shell_exec($string);
+        sleep(3);
+        $headers = [
+            'Content-Type' => 'application/pdf',
+        ];
+        
+        $file = $tmpfname . ".pdf";
+        return response()->download($file, 'proceso.pdf', $headers);
+       
+    }
+
+    public function engranajeHelicoidalIg()
+    {
+       
+
+        $pdf = (new LaraTeX('latex.helicoidalesIg'))->with([
             'P' => $this->check($_POST, 'P'),
             'Np' => $this->check($_POST, 'Np'),
             'Ng' => $this->check($_POST, 'Ng'),

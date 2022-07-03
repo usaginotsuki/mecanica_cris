@@ -36,6 +36,9 @@ Route::get('/conicos-metrico', EngranajeConicoMetrico::class)->name('conico-metr
 Route::post('/pdf-conicos-metrico',  [latexPrint::class, 'engranajeConicoSI']);
 Route::post('/pdf-conicos-ingles',  [latexPrint::class, 'engranajeConicoIg']);
 Route::post('/pdf-rectos-metrico',  [latexPrint::class, 'engranajeRectoSI']);
+Route::post('/pdf-rectos-ingles',  [latexPrint::class, 'engranajeRectoIg']);
+Route::post('/pdf-helicoidal-metrico',  [latexPrint::class, 'engranajeHelicoidalSI']);
+Route::post('/pdf-helicoidal-ingles',  [latexPrint::class, 'engranajeHelicoidalIg']);
 
 Route::post('/notes', function () {
     return 'Creating a note';
