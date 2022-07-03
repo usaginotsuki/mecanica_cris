@@ -145,7 +145,7 @@
                         </div> 
                     </div>
                 {{-- PASO --}}
-                    <div class="flex flex-col items-center">
+                    <div class="hidden flex flex-col items-center">
                         <label for="">Paso <b>(Paso)</b></label>
                         <div class="flex">
                             <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="paso" wire:model="paso">
@@ -1105,7 +1105,7 @@
                         <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="Sgg" wire:model="Sgg">
                             @php
                                 if ($Nsg && $Ofgg && $Ofg) {
-                                    $Sgg = sqrt($Nsg) * ($Ofgg/$Ofg);
+                                    $Sgg = sqrt($Nsg)($FHG/$FH);
                                 }
                             @endphp
                             @if (is_float($Sgg))
@@ -1116,7 +1116,7 @@
                         </span>
                     </div>
                 {{-- CONDICION FINAL --}}
-                    <div class="flex flex-col">
+                    <div class="hidden flex flex-col">
                         <label for="">Condicion del Engranaje <b></b></label>
                         <div class="flex space-x-3">
                             <input class="mb-2 block border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm"  wire:model="opcioncoronado" name="opcioncoronado" type="radio" value="1"/>
@@ -1138,55 +1138,9 @@
             <aside class="hidden md:block bg-neutral-800 border-2 border-yellow-600 rounded-lg w-72 p-4 fixed right-16">
                <div class="grid grid-cols-3 gap-4 text-xs text-neutral-200">
               
-                    <span>
-                        Ng=@if ($Ng && is_float($Ng))
-                                {{number_format($Ng,2)}}
-                            @elseif(!is_float($Ng))
-                                {{$Ng}}
-                            @endif 
-                    </span>
-                    <span>
-                        Dp=@if ($Dp && is_float($Dp))
-                                {{number_format($Dp,2)}}
-                            @elseif(!is_float($Dp))
-                                {{$Dp}}
-                            @endif 
-                    </span>
-                    <span>
-                        Vet=@if ($Vet && is_float($Vet))
-                                {{number_format($Vet,2)}}
-                            @elseif(!is_float($Vet))
-                                {{$Vet}}
-                            @endif 
-                    </span>
-                    <span>
-                        WT=@if ($WT && is_float($WT))
-                                {{number_format($WT,2)}}
-                            @elseif(!is_float($WT))
-                                {{$WT}}
-                            @endif 
-                    </span>
-                    <span>
-                        De=@if ($De && is_float($De))
-                                {{number_format($De,2)}}
-                            @elseif(!is_float($De))
-                                {{$De}}
-                            @endif 
-                    </span>
-                    <span>
-                        Kv=@if ($Kv && is_float($Kv))
-                                {{number_format($Kv,2)}}
-                            @elseif(!is_float($Kv))
-                                {{$Kv}}
-                            @endif 
-                    </span>
-                    <span>
-                        Vetmax=@if ($Vetmax && is_float($Vetmax))
-                                {{number_format($Vetmax,2)}}
-                            @elseif(!is_float($Vetmax))
-                                {{$Vetmax}}
-                            @endif 
-                    </span>
+                    
+                   
+               
                     <span>
                         b=@if ($b && is_float($b))
                                 {{number_format($b,2)}}
@@ -1194,27 +1148,7 @@
                                 {{$b}}
                             @endif 
                     </span>
-                    <span>
-                        Yx=@if ($Yx && is_float($Yx))
-                                {{number_format($Yx,2)}}
-                            @elseif(!is_float($Yx))
-                                {{$Yx}}
-                            @endif 
-                    </span>
-                    <span>
-                        Kmb=@if ($Kmb && is_float($Kmb))
-                                {{number_format($Kmb,2)}}
-                            @elseif(!is_float($Kmb))
-                                {{$Kmb}}
-                            @endif 
-                    </span>
-                    <span>
-                        KHB=@if ($KHB && is_float($KHB))
-                                {{number_format($KHB,2)}}
-                            @elseif(!is_float($KHB))
-                                {{$KHB}}
-                            @endif 
-                    </span>
+                
                     <span>
                         Ofp=@if ($Ofp && is_float($Ofp))
                                 {{number_format($Ofp,2)}}
@@ -1229,13 +1163,7 @@
                                 {{$Ofg}}
                             @endif 
                     </span>
-                    <span>
-                        Flimg=@if ($Flimg && is_float($Flimg))
-                                {{number_format($Flimg,2)}}
-                            @elseif(!is_float($Flimg))
-                                {{$Flimg}}
-                            @endif 
-                    </span>
+                   
                     <span>
                         Ofgg=@if ($Ofgg && is_float($Ofgg))
                                 {{number_format($Ofgg,2)}}
@@ -1243,20 +1171,14 @@
                                 {{$Ofgg}}
                             @endif 
                     </span>
-                    <span>
-                        Ko=@if ($Ko && is_float($Ko))
-                                {{number_format($Ko,2)}}
-                            @elseif(!is_float($Ko))
-                                {{$Ko}}
-                            @endif 
-                    </span>
-                    {{-- <span>
+                    
+                     <span>
                         Ofpp=@if ($Ofpp && is_float($Ofpp))
                                 {{number_format($Ofpp,2)}}
                             @elseif(!is_float($Ofpp))
                                 {{$Ofpp}}
                             @endif 
-                    </span> --}}
+                    </span>
                     <span>
                         Sgg2=@if ($Sgg && is_float($Sgg))
                                 {{number_format(pow($Sgg,2),2)}}
@@ -1264,13 +1186,7 @@
                                 {{pow($Sgg,2)}}
                             @endif 
                     </span>
-                    <span>
-                        Sgg3=@if ($Sgg && is_float($Sgg))
-                                {{number_format(pow($Sgg,3),2)}}
-                            @elseif(!is_float($Sgg))
-                                {{pow($Sgg,3)}}
-                            @endif 
-                    </span>
+                   
                     <span>
                         Sf=@if ($Sf && is_float($Sf))
                                 {{number_format($Sf,2)}}
@@ -1292,13 +1208,7 @@
                                 {{$FHG}}
                             @endif 
                     </span>
-                    <span>
-                        ZNTG=@if ($ZNTG && is_float($ZNTG))
-                                {{number_format($ZNTG,2)}}
-                            @elseif(!is_float($ZNTG))
-                                {{$ZNTG}}
-                            @endif 
-                    </span>
+                    
                     <span>
                         Sgg=@if ($Sgg && is_float($Sgg))
                                 {{number_format($Sgg,2)}}
