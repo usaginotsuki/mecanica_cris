@@ -1,0 +1,122 @@
+*   Trying 213.239.221.138:443...
+* Connected to texlive.net (213.239.221.138) port 443 (#0)
+* ALPN, offering http/1.1
+* successfully set certificate verify locations:
+*   CAfile: C:\xampp\apache\bin\curl-ca-bundle.crt
+  CApath: none
+* SSL connection using TLSv1.2 / ECDHE-RSA-AES128-GCM-SHA256
+* ALPN, server accepted to use http/1.1
+* Server certificate:
+*  subject: CN=texlive.net
+*  start date: Jul  2 15:51:24 2022 GMT
+*  expire date: Sep 30 15:51:23 2022 GMT
+*  subjectAltName: host "texlive.net" matched cert's "texlive.net"
+*  issuer: C=US; O=Let's Encrypt; CN=R3
+*  SSL certificate verify ok.
+> POST /cgi-bin/latexcgi HTTP/1.1
+Host: texlive.net
+User-Agent: GuzzleHttp/7
+Content-Type: multipart/form-data; boundary=2b114cd7651c956a7919342717d1d29a72030e48
+Content-Length: 6571
+
+* upload completely sent off: 6571 out of 6571 bytes
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200 OK
+< Date: Mon, 04 Jul 2022 08:16:44 GMT
+< Server: Apache/2.4.25 (Debian)
+< Vary: Accept-Encoding
+< Transfer-Encoding: chunked
+< Content-Type: text/plain; charset=utf-8
+< 
+* Connection #0 to host texlive.net left intact
+*   Trying 213.239.221.138:443...
+* Connected to texlive.net (213.239.221.138) port 443 (#0)
+* ALPN, offering http/1.1
+* successfully set certificate verify locations:
+*   CAfile: C:\xampp\apache\bin\curl-ca-bundle.crt
+  CApath: none
+* SSL connection using TLSv1.2 / ECDHE-RSA-AES128-GCM-SHA256
+* ALPN, server accepted to use http/1.1
+* Server certificate:
+*  subject: CN=texlive.net
+*  start date: Jul  2 15:51:24 2022 GMT
+*  expire date: Sep 30 15:51:23 2022 GMT
+*  subjectAltName: host "texlive.net" matched cert's "texlive.net"
+*  issuer: C=US; O=Let's Encrypt; CN=R3
+*  SSL certificate verify ok.
+> POST /cgi-bin/latexcgi HTTP/1.1
+Host: texlive.net
+User-Agent: GuzzleHttp/7
+Content-Type: multipart/form-data; boundary=93bd1bd4982d5d2bf71a51fa554ae5dc016c2f1f
+postman-token: 866b14d3-0019-73e0-e27c-e51a4cd2dc2f
+Content-Length: 6571
+
+* upload completely sent off: 6571 out of 6571 bytes
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200 OK
+< Date: Mon, 04 Jul 2022 08:18:05 GMT
+< Server: Apache/2.4.25 (Debian)
+< Vary: Accept-Encoding
+< Transfer-Encoding: chunked
+< Content-Type: text/plain; charset=utf-8
+< 
+* Connection #0 to host texlive.net left intact
+*   Trying 213.239.221.138:443...
+* Connected to texlive.net (213.239.221.138) port 443 (#0)
+* ALPN, offering http/1.1
+* successfully set certificate verify locations:
+*   CAfile: C:\xampp\apache\bin\curl-ca-bundle.crt
+  CApath: none
+* SSL connection using TLSv1.2 / ECDHE-RSA-AES128-GCM-SHA256
+* ALPN, server accepted to use http/1.1
+* Server certificate:
+*  subject: CN=texlive.net
+*  start date: Jul  2 15:51:24 2022 GMT
+*  expire date: Sep 30 15:51:23 2022 GMT
+*  subjectAltName: host "texlive.net" matched cert's "texlive.net"
+*  issuer: C=US; O=Let's Encrypt; CN=R3
+*  SSL certificate verify ok.
+> POST /cgi-bin/latexcgi HTTP/1.1
+Host: texlive.net
+Content-Length: 0
+User-Agent: GuzzleHttp/7
+Content-Type: multipart/form-data
+
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200 OK
+< Date: Mon, 04 Jul 2022 08:20:11 GMT
+< Server: Apache/2.4.25 (Debian)
+< Content-Length: 14
+< Content-Type: text/plain; charset=utf-8
+< 
+* Connection #0 to host texlive.net left intact
+*   Trying 213.239.221.138:443...
+* Connected to texlive.net (213.239.221.138) port 443 (#0)
+* ALPN, offering http/1.1
+* successfully set certificate verify locations:
+*   CAfile: C:\xampp\apache\bin\curl-ca-bundle.crt
+  CApath: none
+* SSL connection using TLSv1.2 / ECDHE-RSA-AES128-GCM-SHA256
+* ALPN, server accepted to use http/1.1
+* Server certificate:
+*  subject: CN=texlive.net
+*  start date: Jul  2 15:51:24 2022 GMT
+*  expire date: Sep 30 15:51:23 2022 GMT
+*  subjectAltName: host "texlive.net" matched cert's "texlive.net"
+*  issuer: C=US; O=Let's Encrypt; CN=R3
+*  SSL certificate verify ok.
+> POST /cgi-bin/latexcgi HTTP/1.1
+Host: texlive.net
+User-Agent: GuzzleHttp/7
+Content-Type: multipart/form-data
+Content-Length: 6513
+
+* upload completely sent off: 6513 out of 6513 bytes
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200 OK
+< Date: Mon, 04 Jul 2022 08:24:48 GMT
+< Server: Apache/2.4.25 (Debian)
+< Content-Length: 14
+< Content-Type: text/plain; charset=utf-8
+< 
+* Connection #0 to host texlive.net left intact

@@ -8,6 +8,7 @@
         "php": "^7.3|^8.0",
         "abiturma/laravel-latex": "^1.0",
         "barryvdh/laravel-dompdf": "^1.0",
+        "cloudinary-labs/cloudinary-laravel": "^1.0",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "ismaelw/laratex": "dev-main",
@@ -15,7 +16,9 @@
         "laravel/jetstream": "^2.8",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
-        "livewire/livewire": "^2.10"
+        "livewire/livewire": "^2.10",
+        "nyholm/psr7": "^1.5",
+        "symfony/psr-http-message-bridge": "^2.1"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

@@ -4,12 +4,12 @@
     <div class="flex justify-center text-gray-800 uppercase font-bold">
         <span>Engranajes Conicos (Ingles)</span>
     </div>
-    <input class="ml-16 px-3 py-3 rounded-full bg-blue-600 hover:bg-blue-800 cursor-pointer text-white" type="button"  value="Imprimir" onclick="window.open('pdf-conicos-ingles', '_blank')" />
-    <hr>
+    
     <form action="{{url('pdf-conicos-ingles')}}" method="POST" target="_blank">
         @csrf
-        <input type="submit">
-    <div>   
+        <button class="ml-16 px-3 py-3 rounded-full bg-blue-600 hover:bg-blue-800 cursor-pointer text-white" value= "Imprimir" type="submit">Imprimir</button>
+        <hr>
+        <div>   
         <div class="flex mt-10">
             <main class="w-full md:w-3/4 grid grid-cols-2 md:grid-cols-4 text-sm gap-y-3">
                 
@@ -20,7 +20,8 @@
                 {{-- Calidad para engranajes Qv --}}
                     <div class="flex flex-col items-center">
                         <label for="">Calidad de engranaje <b>(Qv)</b></label>
-                        <select name="Qv" class="mb-2 block w-36 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="Qv" name="Qv">
+                        <div class="flex">
+                            <select name="Qv" class="mb-2 block w-36 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="Qv" name="Qv">
                                 <option class="text-gray-400" value="0">Seleccionar</option>
                                 <option value="5">Qv = 5</option>
                                 <option value="6">Qv = 6</option>
@@ -30,6 +31,10 @@
                                 <option value="10">Qv = 10</option>
                                 <option value="11">Qv = 11</option>
                         </select>
+                        <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/helicoidales-ingles/Imagen_Qv.png') }}">
+ <i class="text-3xl  fa-solid fa-image"></i>
+</a>
+                        </div>
                     </div>
                 {{-- Potencia en P --}}
                     <div class="flex flex-col items-center">
@@ -234,7 +239,12 @@
                 {{-- FACTOR DE SOBRECARGA Ko--}}
                     <div class="flex flex-col items-center">
                         <label for="">Factor de sobrecarga <b> (Ko)</b></label>
-                        <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="Ko" name="Ko">
+                       <div class="flex">
+                            <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="Ko" name="Ko">
+                        <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/conicos-ingles/Imagen_Ko.png') }}">
+ <i class="text-3xl  fa-solid fa-image"></i>
+</a>
+                       </div>
                     </div>
                 {{-- CALCULO DEL FACTOR DE VELOCIDAD Kv --}}
                     @php
@@ -327,7 +337,12 @@
                 {{-- FACTOR GEOMETRICO Jp--}}
                     <div class="flex flex-col items-center">
                         <label for="">Factor Geometrico Piñon<b> (Jp)</b></label>
-                        <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="Jp" name="Jp">
+                        <div class="flex">
+                            <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="Jp" name="Jp">
+                        <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/conicos-ingles/Imagen_J.png') }}">
+ <i class="text-3xl  fa-solid fa-image"></i>
+</a>
+                        </div>
                     </div>
                 {{-- ESFUERZO DE FLEXION Op --}}
                     <div class="flex flex-col items-center">
@@ -355,7 +370,12 @@
                 {{-- FACTOR GEOMETRICO Jc--}}
                     <div class="flex flex-col items-center">
                         <label for="">Factor Geometrico Corona<b> (Jc)</b></label>
-                        <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="Jc" name="Jc">
+                       <div class="flex">
+                            <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="Jc" name="Jc">
+                        <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/conicos-ingles/Imagen_J.png') }}">
+ <i class="text-3xl  fa-solid fa-image"></i>
+</a>
+                       </div>
                     </div>                    
                 {{-- ESFUERZO DE FLEXION Oc --}}
                     <div class="flex flex-col items-center">
@@ -481,7 +501,12 @@
                     </div>
                 {{-- SATP --}}
                     <div class="flex flex-col">
-                        <label for="">SAT <b>(Sat)</b></label>
+                        <div class="flex">
+                            <label for="">SAT <b>(Sat)</b></label>
+                        <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/conicos-ingles/Imagen_Sat.png') }}">
+ <i class="text-3xl  fa-solid fa-image"></i>
+</a>
+                        </div>
                         <div class="flex space-x-3">
                             <input class="mb-2 block border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="opcionsat" name="opcionsat" type="radio" value="1"/>
                             <label for="">Aceros completamente endurecidos</label>
@@ -532,7 +557,12 @@
                 
                 {{-- SATC --}}
                     <div class="flex flex-col">
-                        <label for="">SAT <b>(SATc)</b></label>
+                       <div class="flex">
+                            <label for="">SAT <b>(SATc)</b></label>
+                        <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/conicos-ingles/Imagen_Sat.png') }}">
+ <i class="text-3xl  fa-solid fa-image"></i>
+</a>
+                       </div>
                         <div class="flex space-x-3">
                             <input class="mb-2 block border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="opcionsatc" name="opcionsatc" type="radio" value="1"/>
                             <label for="">Aceros completamente endurecidos</label>
@@ -632,7 +662,12 @@
                 {{-- I --}}
                     <div class="flex flex-col items-center">
                         <label for="">I <b> (I)</b></label>
-                        <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="I" name="I">
+                        <div class="flex">
+                            <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="I" name="I">
+                        <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/conicos-ingles/Imagen_I.png') }}">
+ <i class="text-3xl  fa-solid fa-image"></i>
+</a>
+                        </div>
                     </div>
                 {{-- CXC --}}
                     <div class="flex flex-col">
@@ -693,7 +728,12 @@
                 
                 {{-- SAC PIÑON--}}
                     <div class="flex flex-col">
-                        <label for="">SAC PIÑON<b>(SAC)</b></label>
+                        <div class="flex">
+                            <label for="">SAC PIÑON<b>(SAC)</b></label>
+                        <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/conicos-ingles/Imagen_Sac.png') }}">
+ <i class="text-3xl  fa-solid fa-image"></i>
+</a>
+                        </div>
                         <div class="flex space-x-3">
                             <input class="mb-2 block border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="opcionsac" name="opcionsac" type="radio" value="1"/>
                             <label for="">Aceros completamente endurecidos</label>
@@ -786,7 +826,12 @@
                 {{-- CR --}}
                     <div class="flex flex-col items-center">
                         <label for="">CR <b> (CR)</b></label>
-                        <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="CR" name="CR">
+                       <div class="flex">
+                            <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="CR" name="CR">
+                        <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/conicos-ingles/Imagen_Cr.png') }}">
+ <i class="text-3xl  fa-solid fa-image"></i>
+</a>
+                       </div>
                     </div>
                 {{-- KT --}}
                     <div class="flex flex-col items-center">
@@ -823,7 +868,12 @@
 
                 {{-- SAC CORONA --}}
                     <div class="flex flex-col">
-                        <label for="">SAC Corona<b>(SAC)</b></label>
+                        <div class="flex">
+                            <label for="">SAC Corona<b>(SAC)</b></label>
+                        <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/conicos-ingles/Imagen_Sac.png') }}">
+ <i class="text-3xl  fa-solid fa-image"></i>
+</a>
+                        </div>
                         <div class="flex space-x-3">
                             <input class="mb-2 block border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" wire:model="opcionsacc" name="opcionsacc" type="radio" value="1"/>
                             <label for="">Aceros completamente endurecidos</label>

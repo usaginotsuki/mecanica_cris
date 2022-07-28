@@ -163,7 +163,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         //Barryvdh\DomPDF\ServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
-
+        CloudinaryLabs\CloudinaryLaravel\CloudinaryServiceProvider::class,
         /*
          * Package Service Providers...
          */
@@ -235,6 +235,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         //'PDF' => \Barryvdh\DomPDF\Facade\Pdf::class,
         'PDF' => Barryvdh\DomPDF\Facade::class,
+        'Cloudinary' => CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary::class,
+
 
     ],
 

@@ -2,12 +2,12 @@
     <div class="flex justify-center text-gray-800 uppercase font-bold">
         Engranajes Helicoidales (Metricos)
     </div>
-    <input class="ml-16 px-3 py-1 rounded-full bg-blue-600 hover:bg-blue-800 cursor-pointer text-white" type="button" value="Imprimir" onclick="javascript:window.print()" />
-    <hr>
+    
     <form action="{{url('pdf-helicoidal-metrico')}}" method="POST" target="_blank">
         @csrf
-        <input type="submit">
-    <div>
+        <button class="ml-16 px-3 py-3 rounded-full bg-blue-600 hover:bg-blue-800 cursor-pointer text-white" value= "Imprimir" type="submit">Imprimir</button>
+        <hr>
+        <div>
         <div class="flex mt-3">
             <main class="w-full md:w-3/4 grid grid-cols-2 md:grid-cols-4 text-sm gap-y-1">
                 
@@ -19,7 +19,8 @@
                 {{-- Calidad para engranajes Qv --}}
                     <div class="flex flex-col items-center">
                         <label for="">Calidad de engranaje <b>(Qv)</b></label>
-                        <select class="mb-2 block w-36 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="qv" wire:model="qv">
+                        <div class="flex">
+                            <select class="mb-2 block w-36 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="qv" wire:model="qv">
                                 <option class="text-gray-400" value="0">Seleccionar</option>
                                 <option value="5">Qv = 5</option>
                                 <option value="6">Qv = 6</option>
@@ -29,6 +30,10 @@
                                 <option value="10">Qv = 10</option>
                                 <option value="11">Qv = 11</option>
                         </select>
+                        <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/helicoidales-metricos/Kv.PNG') }}">
+ <i class="text-3xl  fa-solid fa-image"></i>
+</a>
+                        </div>
                     </div>
                 {{-- Potencia en KW --}}
                     <div class="flex flex-col items-center">
@@ -81,7 +86,13 @@
                 {{-- MODULO --}} 
                     <div class="flex flex-col items-center">
                         <label for="">Modulo<b>(m)</b></label>
-                        <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="m" wire:model="m">
+                        <div class="flex">
+                            <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="m" wire:model="m">
+                        <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/helicoidales-metricos/m.PNG') }}">
+ <i class="text-3xl  fa-solid fa-image"></i>
+</a>
+                        </div>
+                        
                     </div> 
 
                 {{-- MODULO TRANSVERSAL Mt--}}
@@ -150,6 +161,12 @@
                                 {{$NLG}}
                             @endif
                         </span>
+                    </div>
+                    
+                    {{-- CONFIABILIDAD--}}
+                    <div class="flex flex-col items-center">
+                        <label for="">Confiabilidad </label>
+                        <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="C" wire:model="C">
                     </div>
                 
                 <div class="flex flex-col col-span-4 py-1 rounded-full bg-neutral-700 text-center text-white">DISEÑO APLICANDO AGMA 2101-D04 FLEXION (PIÑON)</div>
@@ -225,7 +242,12 @@
                 {{-- FACTOR DE SOBRECARGA --}}
                     <div class="flex flex-col items-center">
                         <label for="">Factor de Sobrecarga <b> (Ko)</b></label>
-                        <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="Ko" wire:model="Ko">
+                        <div class="flex">
+                            <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="Ko" wire:model="Ko">
+                        <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/helicoidales-metricos/Ko.PNG') }}">
+ <i class="text-3xl  fa-solid fa-image"></i>
+</a>
+                        </div>
                     </div>
                 {{-- CALCULO DEL FACTOR DINAMICO KV --}}
                     @php
@@ -415,7 +437,7 @@
                                 @endphp
                                 {{number_format($KHma,2)}}
                             </span>  
-                            <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/espoch.png') }}">
+                            <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/helicoidales-metricos/KHma.PNG') }}">
                                 <i class="text-3xl  fa-solid fa-image"></i>
                             </a> 
                         </div> 
@@ -448,7 +470,12 @@
                 {{-- mB --}}
                     <div class="flex flex-col items-center">
                         <label for="">mB <b>(mB)</b></label>
-                        <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="mB" wire:model="mB">
+                        <div class="flex">
+                            <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="mB" wire:model="mB">
+                        <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/helicoidales-metricos/KB.PNG') }}">
+ <i class="text-3xl  fa-solid fa-image"></i>
+</a>
+                        </div>
                     </div>
                 {{-- KB --}}
                     <div class="flex flex-col items-center">
@@ -469,7 +496,7 @@
                         <label for="">Yj (Piñon) <b>(Yjp)</b></label>
                         <div class="flex">
                             <input type="number" step=".0000000000001" class="mb-2 block w-32  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="Yjp" wire:model="Yjp">
-                            <a class="h-9 w-9 md:h-10 md:w-10 ml-1 md:ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/espoch.png') }}">
+                            <a class="h-9 w-9 md:h-10 md:w-10 ml-1 md:ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/helicoidales-metricos/Yjg.png') }}">
                                 <i class="text-3xl  fa-solid fa-image"></i>
                             </a>
                         </div> 
@@ -486,7 +513,7 @@
                                 @endphp
                                 {{number_format($OFp,2)}}
                             </span>  
-                            <a class="h-9 w-9 md:h-10 md:w-10 ml-1 md:ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/espoch.png') }}">
+                            <a class="h-9 w-9 md:h-10 md:w-10 ml-1 md:ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/helicoidales-metricos/OFP.png') }}">
                                 <i class="text-3xl  fa-solid fa-image"></i>
                             </a> 
                         </div> 
@@ -599,7 +626,12 @@
                 {{-- FACTOR DE CONFIABILIDAD YZ --}}
                     <div class="flex flex-col items-center">
                         <label for="">Factor Confiabilidad <b>(YZ)</b></label>
-                        <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="YZ" wire:model="YZ">
+                        <div class="flex">
+                            <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="YZ" wire:model="YZ">
+                        <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/rectos-metricos/KR.png') }}">
+                                <i class="text-3xl  fa-solid fa-image"></i>
+                            </a>
+                        </div>
                     </div>    
                 {{-- FACTOR DE SEGURIDAD PARA EL PIÑON --}}
                     <div class="flex flex-col items-center">
@@ -622,7 +654,7 @@
                         <label for="">Yj (Corona) <b>(Yjg)</b></label>
                         <div class="flex">
                             <input type="number" step=".0000000000001" class="mb-2 block w-32  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="Yjg" wire:model="Yjg">
-                            <a class="h-9 w-9 md:h-10 md:w-10 ml-1 md:ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/espoch.png') }}">
+                            <a class="h-9 w-9 md:h-10 md:w-10 ml-1 md:ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/helicoidales-metricos/Yjg.png') }}">
                                 <i class="text-3xl  fa-solid fa-image"></i>
                             </a>
                         </div> 
@@ -639,7 +671,7 @@
                                 @endphp
                                 {{number_format($OFg,2)}}
                             </span>  
-                            <a class="h-9 w-9 md:h-10 md:w-10 ml-1 md:ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/espoch.png') }}">
+                            <a class="h-9 w-9 md:h-10 md:w-10 ml-1 md:ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/helicoidales-metricos/OFP.png') }}">
                                 <i class="text-3xl  fa-solid fa-image"></i>
                             </a> 
                         </div> 
@@ -854,7 +886,12 @@
                 {{-- COEFICIENTE ELEASTICO ZE --}}
                     <div class="flex flex-col items-center">
                         <label for="">Coeficiente Elastico <b>(ZE)</b></label>
-                        <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="ZE" wire:model="ZE">
+                        <div class="flex">
+                            <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="ZE" wire:model="ZE">
+                        <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/helicoidales-metricos/ZE.png') }}">
+ <i class="text-3xl  fa-solid fa-image"></i>
+</a>
+                        </div>
                     </div>
                 {{-- FACTOR DE CONDICION SUPERFICIAL ZR --}}
                     <div class="flex flex-col items-center">
@@ -960,7 +997,12 @@
                         @endphp
                         <div class="flex flex-col items-center">
                             <label for="">ZNP <b>(ZNP)</b></label>
-                            <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="ZNP" wire:model="ZNP">
+                            <div class="flex">
+                                <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="ZNP" wire:model="ZNP">
+                            <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/helicoidales-metricos/ZNG.PNG') }}">
+ <i class="text-3xl  fa-solid fa-image"></i>
+</a>
+                            </div>
                         </div>
                     @elseif($opcionformula3 == 2)
                         {{-- FORMULA --}}
@@ -971,9 +1013,14 @@
                         @endphp
                         <div class="flex flex-col items-center">
                             <label for="">ZNP <b>(ZNP)</b></label>
-                            <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="ZNP" wire:model="ZNP">
+                            <div class="flex">
+                                <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="ZNP" wire:model="ZNP">
                                 {{number_format($ZNP,2)}}
                             </span>
+                            <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/helicoidales-metricos/ZNG.PNG') }}">
+ <i class="text-3xl  fa-solid fa-image"></i>
+</a>
+                            </div>
                         </div>
                     @endif
                 {{-- CALCULO DEL FACTOR DE SEGURIDAD DE DESGASTE DEL PINON ZW --}}
@@ -1002,9 +1049,14 @@
                     @endphp
                     <div class="flex flex-col items-center">
                         <label for="">OHP Piñon<b>(OHP)</b></label>
-                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="OHP" wire:model="OHP">
+                        <div class="flex">
+                            <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="OHP" wire:model="OHP">
                             {{number_format($OHP,2)}}
                         </span>
+                        <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/helicoidales-metricos/OHPG.PNG') }}">
+ <i class="text-3xl  fa-solid fa-image"></i>
+</a>
+                        </div>
                     </div>
                 {{-- FACTOR DE SEGURIDAD CALCULO SHP --}}
                     <div class="flex flex-col items-center">
@@ -1045,9 +1097,14 @@
                     @endphp
                     <div class="flex flex-col items-center">
                         <label for="">OHP Corona<b>(OHPG)</b></label>
-                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="OHPG" wire:model="OHPG">
+                        <div class="flex">
+                            <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="OHPG" wire:model="OHPG">
                             {{number_format($OHPG,2)}}
                         </span>
+                        <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/helicoidales-metricos/OHPG.PNG') }}">
+ <i class="text-3xl  fa-solid fa-image"></i>
+</a>
+                        </div>
                     </div>
                  {{-- FACTOR DE CICLOS DE ESFUERZO ZNG --}}
                     <div class="flex flex-col items-center">
@@ -1069,7 +1126,12 @@
                         @endphp
                         <div class="flex flex-col items-center">
                             <label for="">ZNG <b>(ZNG)</b></label>
-                            <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="ZNG" wire:model="ZNG">
+                            <div class="flex">
+                                <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="ZNG" wire:model="ZNG">
+                            <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/helicoidales-metricos/ZNG.PNG') }}">
+ <i class="text-3xl  fa-solid fa-image"></i>
+</a>
+                            </div>
                         </div>
                     @elseif($opcionformula4 == 2)
                         {{-- FORMULA --}}
@@ -1080,9 +1142,14 @@
                         @endphp
                         <div class="flex flex-col items-center">
                             <label for="">ZNG <b>(ZNG)</b></label>
-                            <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="ZNG" wire:model="ZNG">
+                            <div class="flex">
+                                <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="ZNG" wire:model="ZNG">
                                 {{number_format($ZNG,2)}}
                             </span>
+                               <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/helicoidales-metricos/ZNG.PNG') }}">
+ <i class="text-3xl  fa-solid fa-image"></i>
+</a>
+                            </div>
                         </div>
                     @endif
                 {{-- CALCULO DEL FACTOR DE SEGURIDAD DE DESGASTE DEL PINON ZWG --}}

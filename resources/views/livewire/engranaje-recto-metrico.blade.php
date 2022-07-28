@@ -2,12 +2,11 @@
     <div class="flex justify-center text-gray-800 uppercase font-bold">
         Engranajes Rectos (Metricos)
     </div>
-    <input class="ml-16 px-3 py-3 rounded-full bg-blue-600 hover:bg-blue-800 cursor-pointer text-white" type="button" value="Imprimir" onclick="javascript:window.print()" />
-    <hr>
+    
     <form action="{{url('pdf-rectos-metrico')}}" method="POST" target="_blank">
         @csrf
-        <input type="submit">
-    <div>
+        <button class="ml-16 px-3 py-3 rounded-full bg-blue-600 hover:bg-blue-800 cursor-pointer text-white" value= "Imprimir" type="submit">Imprimir</button>
+<hr>    <div>
         <div class="flex mt-3">
             <main class="w-3/4 grid grid-cols-4 text-sm gap-y-1">
                 
@@ -20,7 +19,8 @@
                 {{-- Calidad para engranajes Qv --}}
                     <div class="flex flex-col items-center">
                             <label for="">Calidad del engranaje <b>(Qv)</b></label>
-                            <select class="mb-2 block w-36 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="qv" wire:model="qv">
+                           <div class="flex">
+                                <select class="mb-2 block w-36 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="qv" wire:model="qv">
                                     <option class="text-gray-400" value="0">Seleccionar</option>
                                     <option value="5">Qv = 5</option>
                                     <option value="6">Qv = 6</option>
@@ -30,6 +30,10 @@
                                     <option value="10">Qv = 10</option>
                                     <option value="11">Qv = 11</option>
                             </select>
+                            <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/rectos-metricos/Qv.png') }}">
+                                    <i class="text-3xl  fa-solid fa-image"></i>
+                            </a>
+                           </div>
                     </div>
                 {{-- Potencia a Transmitir KW --}}
                     <div class="flex flex-col items-center">
@@ -219,14 +223,9 @@
                 {{-- RESITENCIA A LA FLEXION RESULTADO ST --}}
                     <div class="flex flex-col items-center">
                         <label for="">Resistencia a la Flexion <b>(St)</b></label>
-                        <div class="flex">
                             <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="st" wire:model="st">
                                 {{number_format($st,3)}}
                             </span>
-                            <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/espoch.png') }}">
-                                <i class="text-3xl  fa-solid fa-image"></i>
-                            </a>
-                        </div>
                     </div>
                 {{-- INTERPOLACION FACTOR DE LEWIS --}}
                     <div class="flex flex-col">
@@ -254,7 +253,7 @@
                             <label for="">Factor de Lewis <b>(Y)</b></label>
                             <div class="flex">
                                 <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="y" wire:model="y">
-                                <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/espoch.png') }}">
+                                <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/rectos-metricos/Y.png') }}">
                                     <i class="text-3xl  fa-solid fa-image"></i>
                                 </a>
                             </div>
@@ -263,7 +262,12 @@
                 {{-- INTERPOLACION PARA ELFACTOR DE LEWIS Y --}}
                     <div class="flex flex-col items-center">
                         <label for="">Interpolacion <b>(Y1)</b></label>
-                        <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="y1" wire:model="y1">
+                        <div class="flex">
+                            <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="y1" wire:model="y1">
+                         <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/rectos-metricos/Y.png') }}">
+                                    <i class="text-3xl  fa-solid fa-image"></i>
+                                </a>
+                        </div>
                     </div>
                     <div class="flex flex-col items-center">
                         <label for="">Interpolacion <b>(Y2)</b></label>
@@ -350,9 +354,7 @@
                         <label for="">Ancho de Cara (Normalizado)<b>(Fn)</b></label>
                         <div class="flex">
                             <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="fn" wire:model="fn">
-                            <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/espoch.png') }}">
-                                <i class="text-3xl  fa-solid fa-image"></i>
-                            </a>
+                           
                         </div>
                     </div>
                 {{-- KO --}}
@@ -360,7 +362,7 @@
                         <label for="">Ko <b>(Ko)</b></label>
                         <div class="flex">
                             <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="ko" wire:model="ko">
-                            <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/espoch.png') }}">
+                            <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/rectos-metricos/Ko.png') }}">
                                 <i class="text-3xl  fa-solid fa-image"></i>
                             </a>
                         </div>
@@ -440,7 +442,12 @@
                     </div>
                 {{-- CPM --}}
                     <div class="flex flex-col">
-                        <label for="">Cpm <b>(Cpm)</b></label>
+                        <div class="flex">
+                            <label for="">Cpm <b>(Cpm)</b></label>
+                             <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/rectos-metricos/Cpm.png') }}">
+                                <i class="text-3xl  fa-solid fa-image"></i>
+                            </a>
+                        </div>
                         <div class="flex space-x-3">
                             <input class="mb-2 block border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm"  wire:model="cpm" name="cpm" type="radio" value="1"/>
                             <label for="">Piñon montado separado (S1/S)< 0.175 </label>
@@ -477,7 +484,7 @@
                                 @endphp
                                 {{number_format($cma,2)}}
                             </span>  
-                            <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/espoch.png') }}">
+                            <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/rectos-metricos/Cma.png') }}">
                                 <i class="text-3xl  fa-solid fa-image"></i>
                             </a> 
                         </div> 
@@ -510,7 +517,12 @@
                 {{-- MB --}}
                     <div class="flex flex-col items-center">
                         <label for="">Mb <b>(Mb)</b></label>
-                        <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="mb" wire:model="mb">
+                        <div class="flex">
+                            <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="mb" wire:model="mb">
+                         <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/rectos-metricos/KB.png') }}">
+                                <i class="text-3xl  fa-solid fa-image"></i>
+                            </a> 
+                        </div>
                     </div>
                 {{-- FACTOR DE ESPESOR DE ARO KB --}}
                     <div class="flex flex-col items-center">
@@ -531,7 +543,7 @@
                         <label for="">Factor Geometrico Piñon <b>(Jp)</b></label>
                         <div class="flex">
                             <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="jp" wire:model="jp">
-                            <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/espoch.png') }}">
+                            <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/rectos-metricos/YjpYjg.png') }}">
                                 <i class="text-3xl  fa-solid fa-image"></i>
                             </a>
                         </div> 
@@ -548,15 +560,18 @@
                                 @endphp
                                 {{number_format($op,3)}}
                             </span>  
-                            <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/espoch.png') }}">
-                                <i class="text-3xl  fa-solid fa-image"></i>
-                            </a> 
+                            
                         </div> 
                     </div>
                 {{-- CALCULO DEL FACTOR DE SEGURIDAD YNP --}}
                     <div class="flex flex-col items-center">
                         <label for="">YNP <b>(Ynp)</b></label>
-                        <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="ynp" wire:model="ynp">
+                        <div class="flex">
+                            <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="ynp" wire:model="ynp">
+                         <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/rectos-metricos/YNPYNG.png') }}">
+                                <i class="text-3xl  fa-solid fa-image"></i>
+                            </a>
+                        </div>
                     </div>
                 {{-- KT --}}
                     <div class="flex flex-col items-center">
@@ -566,7 +581,12 @@
                 {{-- KR --}}
                     <div class="flex flex-col items-center">
                         <label for="">KR <b>(Kr)</b></label>
-                        <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="kr" wire:model="kr">
+                        <div class="flex">
+                            <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="kr" wire:model="kr">
+                        <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/rectos-metricos/KR.png') }}">
+                                <i class="text-3xl  fa-solid fa-image"></i>
+                            </a>
+                        </div>
                     </div>
                 {{-- SFP --}}
                     <div class="flex flex-col items-center">
@@ -592,7 +612,7 @@
                         <label for="">Factor Geometrico Engrane <b>(Jg)</b></label>
                         <div class="flex">
                             <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="jg" wire:model="jg">
-                            <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/espoch.png') }}">
+                            <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/rectos-metricos/YjpYjg.png') }}">
                                 <i class="text-3xl  fa-solid fa-image"></i>
                             </a>
                         </div> 
@@ -608,10 +628,7 @@
                                     }
                                 @endphp
                                 {{number_format($og,3)}}
-                            </span>  
-                            <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/espoch.png') }}">
-                                <i class="text-3xl  fa-solid fa-image"></i>
-                            </a> 
+                            </span>
                         </div> 
                     </div>
                 {{--RESITENCIA A LA FLEXION SELECT STG --}}
@@ -642,7 +659,12 @@
                 {{-- CALCULO DEL FACTOR DE SEGURIDAD YNP --}}
                     <div class="flex flex-col items-center">
                         <label for="">YNG <b>(Yng)</b></label>
-                        <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="yng" wire:model="yng">
+                        <div class="flex">
+                            <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="yng" wire:model="yng">
+                         <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/rectos-metricos/YNPYNG.png') }}">
+                                <i class="text-3xl  fa-solid fa-image"></i>
+                            </a>
+                        </div>
                     </div>
                 {{-- SFG --}}
                     <div class="flex flex-col items-center">
@@ -665,7 +687,12 @@
                 {{-- COEFICIENTE ELEASTICO Ze --}}
                     <div class="flex flex-col items-center">
                         <label for="">ZE <b>(Ze)</b></label>
-                        <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="ze" wire:model="ze">
+                        <div class="flex">
+                            <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="ze" wire:model="ze">
+                        <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/rectos-metricos/Ze.png') }}">
+                                <i class="text-3xl  fa-solid fa-image"></i>
+                            </a>
+                        </div>
                     </div>
                 {{-- FACTOR DE CONDICION SUPERFICIAL ZR --}}
                     <div class="flex flex-col items-center">
@@ -717,7 +744,12 @@
                 {{-- CALCULO DEL FACTOR DE SEGURIDAD DE DESGASTE DEL PINON --}}
                     <div class="flex flex-col items-center">
                         <label for="">ZNP PIÑON<b>(Znp)</b></label>
-                        <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="znp" wire:model="znp">
+                        <div class="flex">
+                            <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="znp" wire:model="znp">
+                         <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/rectos-metricos/ZNPZNG.png') }}">
+                                <i class="text-3xl  fa-solid fa-image"></i>
+                            </a>
+                        </div>
                     </div>
                 {{-- FACTOR DE DUREZA PARA EL PIÑON SIEMPRE = 1 --}}
                     <div class="flex flex-col items-center">
@@ -754,7 +786,12 @@
                 {{-- CALCULO DEL FACTOR DE SEGURIDAD DE DESGASTE DEL PINON --}}
                     <div class="flex flex-col items-center">
                         <label for="">ZNG Engrane<b>(Zng)</b></label>
-                        <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="zng" wire:model="zng">
+                        <div class="flex">
+                            <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="zng" wire:model="zng">
+                        <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/rectos-metricos/ZNPZNG.png') }}">
+                                <i class="text-3xl  fa-solid fa-image"></i>
+                            </a>
+                        </div>
                     </div>
                 {{-- FACTOR DE DUREZA PARA EL ENGRANE --}}
                     <div class="flex flex-col items-center">

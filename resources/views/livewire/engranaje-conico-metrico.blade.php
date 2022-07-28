@@ -4,12 +4,11 @@
     <div class="flex justify-center text-gray-800 uppercase font-bold">
         Engranajes Conicos (Metrico)
     </div>
-    <input class="ml-16 px-3 py-3 rounded-full bg-blue-600 hover:bg-blue-800 cursor-pointer text-white" type="button" value="Resultados" onclick= '' />
-    <hr>
+   
     <form action="{{url('pdf-conicos-metrico')}}" method="POST" target="_blank">
         @csrf
-        <input type="submit">
-    <div>
+        <button class="ml-16 px-3 py-3 rounded-full bg-blue-600 hover:bg-blue-800 cursor-pointer text-white" value= "Imprimir" type="submit">Imprimir</button>
+    <hr>    <div>
         
     <div>
         <div class="flex mt-10">
@@ -390,7 +389,7 @@
                                 $b = $opcionanchocara;
                             }
                         @endphp
-                        <span>{{$b}}</span>
+                       
                     </div>
                 {{-- FACTOR DE TAMAÑO --}}
                     <div class="flex flex-col items-center">
@@ -882,6 +881,7 @@
                             @php
                                 if ($Ns && $FHP && $FH) {
                                     $Sff = sqrt($Ns) * ($FHP/$FH);
+                                    $Sff = pow($Sff,2);
                                 }
                             @endphp
                             @if (is_float($Sff))
@@ -1015,7 +1015,8 @@
                         <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="Ofgg" wire:model="Ofgg">
                             @php
                                 if ($Flimg && $YNTG && $Nsg && $Ko && $Yz) {
-                                    $Ofgg = ($Flimg * $YNTG) / ($Nsg * $Ko * (sqrt($Yz))); 
+                                    
+                                     $Ofgg = ($Flimg * $YNTG) / ($Nsg * $Ko * $Yz); 
                                 }
                             @endphp
                             @if (is_float($Ofgg))
@@ -1104,12 +1105,13 @@
                         <label for="">Factor de Seguridad<b>(Sgg)</b></label>
                         <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="Sgg" wire:model="Sgg">
                             @php
-                                if ($Nsg && $Ofgg && $Ofg) {
-                                    $Sgg = sqrt($Nsg)($FHG/$FH);
+                                if ($Nsg && $FHG && $FH) {
+                                    $Sgg = sqrt($Nsg) * ($FHG/$FH);
+                                    $Sgg = pow($Sgg,2);
                                 }
                             @endphp
                             @if (is_float($Sgg))
-                                {{number_format($Sgg,2)}}
+                                {{number_format($Sgg, 2)}}
                             @else
                                 {{$Sgg}}
                             @endif
@@ -1136,11 +1138,7 @@
             {{-- ------------------------------------ --}}
             
             <aside class="hidden md:block bg-neutral-800 border-2 border-yellow-600 rounded-lg w-72 p-4 fixed right-16">
-               <div class="grid grid-cols-3 gap-4 text-xs text-neutral-200">
-              
-                    
-                   
-               
+               <div class="grid grid-cols-3 gap-4 text-xs text-neutral-200"> 
                     <span>
                         b=@if ($b && is_float($b))
                                 {{number_format($b,2)}}
@@ -1148,12 +1146,25 @@
                                 {{$b}}
                             @endif 
                     </span>
-                
                     <span>
                         Ofp=@if ($Ofp && is_float($Ofp))
                                 {{number_format($Ofp,2)}}
                             @elseif(!is_float($Ofp))
                                 {{$Ofp}}
+                            @endif 
+                    </span>
+                    <span>
+                        Ofpp=@if ($Ofpp && is_float($Ofpp))
+                                {{number_format($Ofpp,2)}}
+                            @elseif(!is_float($Ofpp))
+                                {{$Ofpp}}
+                            @endif 
+                    </span>
+                    <span>
+                        Sf=@if ($Sf && is_float($Sf))
+                                {{number_format($Sf,2)}}
+                            @elseif(!is_float($Sf))
+                                {{$Sf}}
                             @endif 
                     </span>
                     <span>
@@ -1164,34 +1175,12 @@
                             @endif 
                     </span>
                    
+                     
                     <span>
                         Ofgg=@if ($Ofgg && is_float($Ofgg))
                                 {{number_format($Ofgg,2)}}
                             @elseif(!is_float($Ofgg))
                                 {{$Ofgg}}
-                            @endif 
-                    </span>
-                    
-                     <span>
-                        Ofpp=@if ($Ofpp && is_float($Ofpp))
-                                {{number_format($Ofpp,2)}}
-                            @elseif(!is_float($Ofpp))
-                                {{$Ofpp}}
-                            @endif 
-                    </span>
-                    <span>
-                        Sgg2=@if ($Sgg && is_float($Sgg))
-                                {{number_format(pow($Sgg,2),2)}}
-                            @elseif(!is_float($Sgg))
-                                {{pow($Sgg,2)}}
-                            @endif 
-                    </span>
-                   
-                    <span>
-                        Sf=@if ($Sf && is_float($Sf))
-                                {{number_format($Sf,2)}}
-                            @elseif(!is_float($Sf))
-                                {{$Sf}}
                             @endif 
                     </span>
                     <span>
@@ -1201,6 +1190,30 @@
                                 {{$Sfg}}
                             @endif 
                     </span>
+                   
+                    
+                    <span>
+                        FH=@if ($FH && is_float($FH))
+                                {{number_format($FH,2)}}
+                            @elseif(!is_float($FH))
+                                {{$FH}}
+                            @endif 
+                    </span>
+                    <span>
+                        FHP=@if ($FHP && is_float($FHP))
+                                {{number_format($FHP,2)}}
+                            @elseif(!is_float($FHP))
+                                {{$FHP}}
+                            @endif 
+                    </span>
+                    
+                    <span>
+                        SFF2=@if ($Sff && is_float($Sff))
+                                {{number_format($Sff,2)}}
+                            @elseif(!is_float($Sff))
+                                {{$Sff}}
+                            @endif 
+                    </span>
                     <span>
                         FHG=@if ($FHG && is_float($FHG))
                                 {{number_format($FHG,2)}}
@@ -1208,87 +1221,15 @@
                                 {{$FHG}}
                             @endif 
                     </span>
-                    
                     <span>
-                        Sgg=@if ($Sgg && is_float($Sgg))
+                        SGG2=@if ($Sgg && is_float($Sgg))
                                 {{number_format($Sgg,2)}}
                             @elseif(!is_float($Sgg))
                                 {{$Sgg}}
                             @endif 
                     </span>
-                    <span>
-                        Yz=@if ($Yz && is_float($Yz))
-                                {{number_format($Yz,2)}}
-                            @elseif(!is_float($Yz))
-                                {{$Yz}}
-                            @endif 
-                    </span>
-                   {{--  <span>
-                        P=@if ($P && is_float($P))
-                                {{number_format($P,2)}}
-                            @elseif(!is_float($P))
-                                {{$P}}
-                            @endif
-                    </span>
-                    <span>
-                        RPMp=@if ($RPMp && is_float($RPMp))
-                                    {{number_format($RPMp,2)}}
-                                @elseif(!is_float($RPMp))
-                                    {{$RPMp}}
-                                @endif
-                    </span>
-                    <span>
-                        RPMc=@if ($RPMc && is_float($RPMc))
-                                    {{number_format($RPMc,2)}}
-                                @elseif(!is_float($RPMc))
-                                    {{$RPMc}}
-                                @endif 
-                    </span>
-                    <span>
-                        V=@if ($V && is_float($V))
-                                {{number_format($V,2)}}
-                            @elseif(!is_float($V))
-                                {{$V}}
-                            @endif 
-                    </span>
-                    <span>
-                        Wt=@if ($Wt && is_float($Wt))
-                                {{number_format($Wt,2)}}
-                            @elseif(!is_float($Wt))
-                                {{$Wt}}
-                            @endif 
-                    </span>
-                    <span>
-                        HBp=@if ($HBp && is_float($HBp))
-                                {{number_format($HBp,2)}}
-                            @elseif(!is_float($HBp))
-                                {{$HBp}}
-                            @endif 
-                    </span>
-                    <span>
-                        HBg=@if ($HBg && is_float($HBg))
-                                {{number_format($HBg,2)}}
-                            @elseif(!is_float($HBg))
-                                {{$HBg}}
-                            @endif  
-                    </span>
-                    <span>
-                        SHP=@if ($SHP && is_float($SHP))
-                                {{number_format($SHP,2)}}
-                            @elseif(!is_float($SHP))
-                                {{$SHP}}
-                            @endif 
-                    </span>
-                    <span>
-                        SHG= @if ($SHC && is_float($SHC))
-                                {{number_format($SHC,2)}}
-                            @elseif(!is_float($SHC))
-                                {{$SHC}}
-                            @endif
-                    </span> --}}
                </div>
             </aside>
-
             {{-- --------------------------------------- --}}
             {{-- VALIDACIONES Y MENSAJES PARA EL USUARIO --}}
             {{-- --------------------------------------- --}}
@@ -1342,37 +1283,25 @@
                 @endif
 
             {{-- MENSAJES DE VALIDACIONES Y CONDICIONES CUARTA ITERACCION--}}
-                    @php
-                        $condicionmensajefinal=0;
-                        if ($opcioncoronado == 1) {
+                  
+                
+                @php
+                    $condicionmensajefinal=0;
 
-                            $valorcoronado1 = 0;
-                            $valorcoronado1 = pow($Sgg,2);
-
-                            if ($valorcoronado1 > $Nsg) {
-                                $factorseguridadcorona = 0;
-                                $condicionmensajefinal=1;
-                                echo '<script>alert ("Si cumple con todas las condiciones valores aceptables");</script>';
-                            }else{
-                                $factorseguridadcorona = 0;
-                                $condicionmensajefinal=2;
-                                echo '<script>alert ("No cumple con las condiciones");</script>';
-                            }
-                        }elseif ($opcioncoronado == 2) {
-
-                                $valornocoronado1 = 0;
-                                $valornocoronado1 = pow($Sgg,3);
-
-                                if ($valornocoronado1 > $Nsg ) {
-                                    $factorseguridadcorona = 0;
-                                    $condicionmensajefinal=1;
-                                    echo '<script>alert ("Si cumple con todas las condiciones valores aceptables");</script>';
-                                }else{
-                                    $factorseguridadcorona = 0;
-                                    $condicionmensajefinal=2;
-                                    echo '<script>alert ("No cumple con las condiciones");</script>';
-                                }
-                        }
+                    if ($Sff && $Sgg && $Ns) {
+                        if ((pow($Sff,2) > $Ns) && (pow($Sgg,2) > $Ns)  ) {
+                        $factorseguridadcorona = 0;
+                        $factorseguridad == 0;
+                        $condicionmensajefinal=1;
+                        echo '<script>alert ("Si cumple con todas las condiciones valores aceptables");</script>';
+                    } else {
+                        $factorseguridadcorona = 0;
+                        $factorseguridad == 0;
+                        $condicionmensajefinal=2;
+                        echo '<script>alert ("No cumple con las condiciones");</script>';
+                    }
+                    }
+                    
                 @endphp
                 @if ($condicionmensajefinal == 1)
                     <div class="fixed right-16 bottom-52 w-72 rounded-lg bg-neutral-800 border-2 border-yellow-600 p-4">

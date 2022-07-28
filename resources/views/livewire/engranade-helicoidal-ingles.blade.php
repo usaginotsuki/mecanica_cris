@@ -2,12 +2,12 @@
     <div class="flex justify-center text-gray-800 uppercase font-bold">
         Engranajes Helicoidales (Ingles)
     </div>
-    <input class="ml-16 px-3 py-3 rounded-full bg-blue-600 hover:bg-blue-800 cursor-pointer text-white" type="button" value="Imprimir" onclick="javascript:window.print()" />
-    <hr>
+   
     <form action="{{url('pdf-helicoidal-ingles')}}" method="POST" target="_blank">
         @csrf
-        <input type="submit">
-    <div>
+        <button class="ml-16 px-3 py-3 rounded-full bg-blue-600 hover:bg-blue-800 cursor-pointer text-white" value= "Imprimir" type="submit">Imprimir</button>
+        <hr>
+        <div>
         <div class="flex mt-3">
             <main class="w-3/4 grid grid-cols-4 text-sm gap-y-1">
                 <div class="flex flex-col col-span-4 py-1 rounded-full bg-neutral-700 text-center text-white">PARAMETROS DE DISEÑO</div>
@@ -18,7 +18,8 @@
                 {{-- Calidad para engranajes Qv --}}
                     <div class="flex flex-col items-center">
                             <label for="">Calidad del engranaje <b>(Qv)</b></label>
-                            <select class="mb-2 block w-36 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="qv" wire:model="qv">
+                            <div class="flex">
+                                <select class="mb-2 block w-36 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="qv" wire:model="qv">
                                     <option class="text-gray-400" value="0">Seleccionar</option>
                                     <option value="5">Qv = 5</option>
                                     <option value="6">Qv = 6</option>
@@ -28,6 +29,10 @@
                                     <option value="10">Qv = 10</option>
                                     <option value="11">Qv = 11</option>
                             </select>
+                            <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/helicoidales-ingles/Imagen_Qv.png') }}">
+ <i class="text-3xl  fa-solid fa-image"></i>
+</a>
+                            </div>
                     </div>
                 {{-- Potencia a Transmitir KW --}}
                     <div class="flex flex-col items-center">
@@ -49,7 +54,12 @@
                     <div class="flex flex-col items-center">
                         <x-jet-label for="text" value="" />
                         <label for=""># Dientes del Piñon<b>(Np)</b></label>
-                        <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="np" wire:model="np">
+                       <div class="flex">
+                            <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="np" wire:model="np">
+                        <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/helicoidales-ingles/Imagen_Np.png') }}">
+ <i class="text-3xl  fa-solid fa-image"></i>
+</a>
+                       </div>
                     </div> 
                 {{-- Dureza-Brinell Piñon HBp --}}
                     <div class="flex flex-col items-center">
@@ -168,9 +178,9 @@
                         <label for="">Ko <b>(Ko)</b></label>
                         <div class="flex">
                             <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="ko" wire:model="ko">
-                            <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/espoch.png') }}">
-                                <i class="text-3xl  fa-solid fa-image"></i>
-                            </a>
+                            <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/helicoidales-ingles/Imagen_ko.png') }}">
+ <i class="text-3xl  fa-solid fa-image"></i>
+</a>
                         </div>
                     </div>
                 {{-- CALCULO DE KV --}}
@@ -214,16 +224,21 @@
                             <label for="">Factor de Lewis <b>(Y)</b></label>
                             <div class="flex">
                                 <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="y" wire:model="y">
-                                <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/espoch.png') }}">
-                                    <i class="text-3xl  fa-solid fa-image"></i>
-                                </a>
+                                <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/helicoidales-ingles/Imagen_Y.png') }}">
+ <i class="text-3xl  fa-solid fa-image"></i>
+</a>
                             </div>
                         </div>
                     @elseif($opcion == 1)
                 {{-- INTERPOLACION PARA ELFACTOR DE LEWIS Y --}}
                             <div class="flex flex-col items-center">
                                 <label for="">Interpolacion <b>(Y1)</b></label>
-                                <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="y1" wire:model="y1">
+                                <div class="flex">
+                                    <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="y1" wire:model="y1">
+                                <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/helicoidales-ingles/Imagen_Y.png') }}">
+ <i class="text-3xl  fa-solid fa-image"></i>
+</a>
+                                </div>
                             </div>
                             <div class="flex flex-col items-center">
                                 <label for="">Interpolacion <b>(Y2)</b></label>
@@ -355,9 +370,9 @@
                                 @endphp
                                 {{number_format($cma,3)}}
                             </span>  
-                            <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/espoch.png') }}">
-                                <i class="text-3xl  fa-solid fa-image"></i>
-                            </a> 
+                            <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/helicoidales-ingles/Imagen_FACT_cma.png') }}">
+ <i class="text-3xl  fa-solid fa-image"></i>
+</a>
                         </div> 
                     </div>
                 {{-- CE --}}
@@ -388,7 +403,12 @@
                 {{-- MB --}}
                     <div class="flex flex-col items-center">
                         <label for="">Mb <b>(Mb)</b></label>
-                        <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="mb" wire:model="mb">
+                       <div class="flex">
+                            <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="mb" wire:model="mb">
+                        <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/helicoidales-ingles/Imagen_mb.png') }}">
+ <i class="text-3xl  fa-solid fa-image"></i>
+</a>
+                       </div>
                     </div>
                 {{-- KB --}}
                     <div class="flex flex-col items-center">
@@ -409,9 +429,9 @@
                         <label for="">Factor Geometrico Piñon <b>(Jp)</b></label>
                         <div class="flex">
                             <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="jp" wire:model="jp">
-                            <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/espoch.png') }}">
-                                <i class="text-3xl  fa-solid fa-image"></i>
-                            </a>
+                            <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/helicoidales-ingles/Imagen_J.png') }}">
+ <i class="text-3xl  fa-solid fa-image"></i>
+</a>
                         </div> 
                     </div>
                 {{-- SEGUNDA ITERACCION OP --}}
@@ -425,10 +445,7 @@
                                     }
                                 @endphp
                                 {{number_format($op,2)}}
-                            </span>  
-                            <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/espoch.png') }}">
-                                <i class="text-3xl  fa-solid fa-image"></i>
-                            </a> 
+                            </span> 
                         </div> 
                     </div>
                 {{--RESITENCIA A LA FLEXION ST --}}
@@ -463,15 +480,20 @@
                             <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="st" wire:model="st">
                                 {{number_format($st,2)}}
                             </span>
-                            <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/espoch.png') }}">
-                                <i class="text-3xl  fa-solid fa-image"></i>
-                            </a>
+                            <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/helicoidales-ingles/Imagen_St.png') }}">
+ <i class="text-3xl  fa-solid fa-image"></i>
+</a>
                         </div>
                     </div> 
                 {{-- CALCULO DEL FACTOR DE SEGURIDAD YNP --}}
                     <div class="flex flex-col items-center">
                         <label for="">YNP <b>(Ynp)</b></label>
-                        <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="ynp" wire:model="ynp">
+                       <div class="flex">
+                            <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="ynp" wire:model="ynp">
+                        <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/helicoidales-ingles/Imagen_Yn.png') }}">
+ <i class="text-3xl  fa-solid fa-image"></i>
+</a>
+                       </div>
                     </div>
                 {{-- KT --}}
                     <div class="flex flex-col items-center">
@@ -481,7 +503,12 @@
                 {{-- KR --}}
                     <div class="flex flex-col items-center">
                         <label for="">KR <b>(Kr)</b></label>
-                        <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="kr" wire:model="kr">
+                       <div class="flex">
+                            <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="kr" wire:model="kr">
+                        <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/helicoidales-ingles/Imagen_kr.png') }}">
+ <i class="text-3xl  fa-solid fa-image"></i>
+</a>
+                       </div>
                     </div>
 
                 {{-- SFP --}}
@@ -503,7 +530,12 @@
                 {{-- FACTOR GEOMETRICO DE LA CORONA JC --}}
                     <div class="flex flex-col items-center">
                         <label for="">Factor Geometrico Corona<b>(Jc)</b></label>
-                        <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="jc" wire:model="jc">
+                        <div class="flex">
+                            <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="jc" wire:model="jc">
+                        <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/helicoidales-ingles/Imagen_J1.png') }}">
+ <i class="text-3xl  fa-solid fa-image"></i>
+</a>
+                        </div>
                     </div>
                 {{-- ESFUERZO DE LA CORONA OC --}}
                     <div class="flex flex-col items-center">
@@ -549,15 +581,20 @@
                             <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="stc" wire:model="stc">
                                 {{number_format($stc,3)}}
                             </span>
-                            <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/espoch.png') }}">
-                                <i class="text-3xl  fa-solid fa-image"></i>
-                            </a>
+                            <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/helicoidales-ingles/Imagen_St.png') }}">
+ <i class="text-3xl  fa-solid fa-image"></i>
+</a>
                         </div>
                     </div>
                 {{-- YNC PARA LA CORONA --}}
                     <div class="flex flex-col items-center">
                         <label for="">YNC <b>(Ync)</b></label>
-                        <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="ync" wire:model="ync">
+                        <div class="flex">
+                            <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="ync" wire:model="ync">
+                        <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/helicoidales-ingles/Imagen_Yn.png') }}">
+ <i class="text-3xl  fa-solid fa-image"></i>
+</a>
+                        </div>
                     </div>
                 {{-- FACTOR DE SEGURIDAD DE LA CORONA SFC --}}
                     <div class="flex flex-col items-center">
@@ -666,7 +703,12 @@
                 {{-- CP PARA EL PINON --}}
                     <div class="flex flex-col items-center">
                         <label for="">CP <b>(Cp)</b></label>
-                        <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="cp3" wire:model="cp3">
+                        <div class="flex">
+                            <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="cp3" wire:model="cp3">
+                        <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/helicoidales-ingles/Imagen_Cp.png') }}">
+ <i class="text-3xl  fa-solid fa-image"></i>
+</a>
+                        </div>
                     </div>
                 {{-- CF PARA EL PINON --}}
                     <div class="flex flex-col items-center">
@@ -744,15 +786,20 @@
                     </div>
                 {{-- NUMERO DE ESFUERZO DE CONTACTO PERMISIBLE Sc --}}
                     <div class="flex flex-col items-center">
-                        <label for="">Resistencia a la corona (HBP)<b> (Scp)</b></label>
+                        <label for="">Resistencia al Piñon (HBP)<b> (Scp)</b></label>
                         @php
                             if ($hbp) {
                                 $sc3 = (322 * $hbp) + 29100;
                             }
                         @endphp
-                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="sc3" wire:model="$sc3">
+                       <div class="flex">
+                            <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="sc3" wire:model="$sc3">
                             {{number_format($sc3,2)}}
                         </span>
+                        <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/helicoidales-ingles/Imagen_Sc.png') }}">
+ <i class="text-3xl  fa-solid fa-image"></i>
+</a>
+                       </div>
                     </div>
                 {{-- CHP PARA EL PINON --}}
                     <div class="flex flex-col items-center">
@@ -762,7 +809,12 @@
                 {{-- ZN PARA EL PINON --}}
                     <div class="flex flex-col items-center">
                         <label for="">ZN PIÑON<b>(Zn)</b></label>
-                        <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="zn3" wire:model="zn3">
+                       <div class="flex">
+                            <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="zn3" wire:model="zn3">
+                        <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/helicoidales-ingles/Imagen_Zn.png') }}">
+ <i class="text-3xl  fa-solid fa-image"></i>
+</a>
+                       </div>
                     </div>
                 {{-- CALCULO PORA EL SH DEL PIÑON --}}
                     <div class="flex flex-col items-center">
@@ -784,14 +836,24 @@
                                 $scc3 = (322 * $hbc) + 29100;
                             }
                         @endphp
-                        <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="scc3" wire:model="scc3">
+                       <div class="flex">
+                            <span class="mb-2 w-36 h-10 flex justify-center items-center border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="scc3" wire:model="scc3">
                             {{number_format($scc3,2)}}
                         </span>
+                        <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/helicoidales-ingles/Imagen_Sc.png') }}">
+ <i class="text-3xl  fa-solid fa-image"></i>
+</a>
+                       </div>
                     </div>
                 {{-- ZN PARA LA CORONA --}}
                     <div class="flex flex-col items-center">
                         <label for="">ZN CORONA<b>(Zn)</b></label>
-                        <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="znc3" wire:model="znc3">
+                      <div class="flex">
+                            <input type="number" step=".0000000000001" class="mb-2 block w-36  border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm" name="znc3" wire:model="znc3">
+                        <a class="h-10 w-10 ml-2 text-yellow-600 bg-neutral-800 rounded-lg flex justify-center items-center" data-fancybox href="{{ asset('fotos/helicoidales-ingles/Imagen_Zn.png') }}">
+ <i class="text-3xl  fa-solid fa-image"></i>
+</a>
+                      </div>
                     </div>
                 {{-- CHC PARA EL CORONA --}}
                     <div class="flex flex-col items-center">
